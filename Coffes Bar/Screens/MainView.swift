@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
+  @ObservedObject var cartOders = CartObservable()
+
   var body: some View {
     TabView {
-      HomeScreen()
+      HomeScreen(cart: cartOders)
         .tabItem {
           Image(systemName: "house.fill")
         }
 
-      Cart()
+      Cart(cart: cartOders)
         .tabItem {
           Image(systemName: "cart.fill")
         }

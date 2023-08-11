@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct Cart: View {
+  @ObservedObject var cart: CartObservable
+
   var body: some View {
-    Text("Hello cart")
+    List(cart.cartOrder) { order in
+      Text(order.name)
+    }
   }
 }
 
 struct Cart_Previews: PreviewProvider {
   static var previews: some View {
-    Cart()
+    Cart(cart: CartObservable())
   }
 }

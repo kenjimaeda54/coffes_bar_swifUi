@@ -9,6 +9,32 @@ import SwiftUI
 
 struct HomeScreen: View {
   @State private var searchMovie = ""
+  @ObservedObject var cart: CartObservable
+  @State private var listIdSelected: [String] = []
+
+  func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
+		
+    if let index = listIdSelected.firstIndex(where: { $0 == itemSelected.id }) {
+			
+      listIdSelected.remove(at: index)
+      let indexOrder = cart.cartOrder.firstIndex(where: { $0.id == itemSelected.id })
+      cart.cartOrder.remove(at: indexOrder!)
+			
+    } else {
+			
+      listIdSelected.append(itemSelected.id)
+      let cartOrder = CartOderModel(
+        id: itemSelected.id,
+        urlPhoto: itemSelected.urlPhoto,
+        quantity: 1,
+        price: itemSelected.price,
+        name: itemSelected.name
+      )
+
+      cart.cartOrder.append(cartOrder)
+    }
+  }
+
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack {
@@ -55,7 +81,11 @@ struct HomeScreen: View {
 
         LazyVGrid(columns: gridItem) {
           ForEach(coffeesMock) { coffee in
-            CoffeeItem(coffee: coffee)
+            CoffeeItem(
+              coffee: coffee,
+              listIdSelected: $listIdSelected,
+              handleSelectedCoffee: { handleSelectedCoffee(coffee) }
+            )
           }
         }
       }
@@ -67,6 +97,6 @@ struct HomeScreen: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeScreen()
+    HomeScreen(cart: CartObservable())
   }
 }

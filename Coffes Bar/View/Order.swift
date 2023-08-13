@@ -1,0 +1,53 @@
+//
+//  Order.swift
+//  Coffes Bar
+//
+//  Created by kenjimaeda on 11/08/23.
+//
+
+import SwiftUI
+
+struct Order: View {
+  let order: CartOderModel
+
+  var body: some View {
+    HStack(spacing: 20) {
+      AsyncImage(url: URL(string: order.urlPhoto), scale: 8)
+        .scaledToFill()
+        .cornerRadius(8)
+
+      VStack(alignment: .leading) {
+        Text(order.name)
+          .font(.custom(FontsApp.interMedium, size: 18))
+          .foregroundColor(ColorsApp.white)
+          .lineLimit(2)
+
+        Spacer()
+        Text(order.price)
+          .font(.custom(FontsApp.interRegular, size: 18))
+          .foregroundColor(ColorsApp.white)
+      }
+      Spacer()
+      HStack {
+        CustomButtonAddOrMinusItens(nameImage: "minus")
+
+        Text("\(order.quantity)")
+          .font(.custom(FontsApp.interLight, size: 15))
+          .foregroundColor(ColorsApp.beige)
+
+        CustomButtonAddOrMinusItens(nameImage: "plus")
+      }
+    }
+    .padding(EdgeInsets(top: 5, leading: 10, bottom: 7, trailing: 7))
+    .background(ColorsApp.brown)
+    .cornerRadius(5)
+    .frame(height: 100)
+  }
+}
+
+struct Order_Previews: PreviewProvider {
+  static var previews: some View {
+    Order(order: cartOderMock[0])
+      .previewLayout(.sizeThatFits)
+  }
+}

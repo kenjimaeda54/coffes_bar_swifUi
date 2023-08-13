@@ -13,15 +13,12 @@ struct HomeScreen: View {
   @State private var listIdSelected: [String] = []
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
-		
     if let index = listIdSelected.firstIndex(where: { $0 == itemSelected.id }) {
-			
       listIdSelected.remove(at: index)
       let indexOrder = cart.cartOrder.firstIndex(where: { $0.id == itemSelected.id })
       cart.cartOrder.remove(at: indexOrder!)
-			
+
     } else {
-			
       listIdSelected.append(itemSelected.id)
       let cartOrder = CartOderModel(
         id: itemSelected.id,

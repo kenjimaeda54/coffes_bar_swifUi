@@ -1,14 +1,53 @@
 //
 //  Cart.swift
 //  Coffes Bar
-//
-//  Created by kenjimaeda on 10/08/23.
+// 5//  Created by kenjimaeda on 10/08/23.
 //
 
 import SwiftUI
 
 struct Cart: View {
   @ObservedObject var cart: CartObservable
+
+  func handlePlusQuantity(_ coffee: CartOderModel) {
+    let newOrder = cart.cartOrder.map {
+      if $0.id == coffee.id && $0.quantity < 50 {
+        let newQuantity = $0.quantity + 1
+        let newOrder = CartOderModel(
+          id: $0.id,
+          urlPhoto: $0.urlPhoto,
+          quantity: newQuantity,
+          price: $0.price,
+          name: $0.name
+        )
+
+        return newOrder
+      }
+      return $0
+    }
+
+    cart.cartOrder = newOrder
+  }
+
+  func handleMinusQuantity(_ coffee: CartOderModel) {
+    let newOrder = cart.cartOrder.map {
+      if $0.id == coffee.id && $0.quantity > 1 {
+        let newQuantity = $0.quantity - 1
+        let newOrder = CartOderModel(
+          id: $0.id,
+          urlPhoto: $0.urlPhoto,
+          quantity: newQuantity,
+          price: $0.price,
+          name: $0.name
+        )
+
+        return newOrder
+      }
+      return $0
+    }
+
+    cart.cartOrder = newOrder
+  }
 
   var body: some View {
     GeometryReader { geometry in
@@ -17,7 +56,7 @@ struct Cart: View {
         ZStack {
           ColorsApp.black
             .ignoresSafeArea(.all)
-          Text("Você não possui pedido")
+          Text("Você não possui pedidos")
             .font(.custom(FontsApp.interBold, size: 20))
             .foregroundColor(ColorsApp.white)
             .foregroundColor(ColorsApp.white)
@@ -30,13 +69,20 @@ struct Cart: View {
             .foregroundColor(ColorsApp.white)
           VStack {
             ForEach(cart.cartOrder) { coffee in
-              Order(order: coffee)
+              Order(
+                order: coffee,
+                handlePlusQuantity: { handlePlusQuantity(coffee) },
+                handleMinusQuantity: { handleMinusQuantity(coffee) }
+              )
             }
           }
-          .frame(minHeight: geometry.size.height * 0.73)
+          // para alinhar no topo usa dentro do frame
+          .frame(minHeight: geometry.size.height * 0.70, alignment: .top)
+          Spacer()
           Divider()
-            .foregroundColor(ColorsApp.white)
-            .frame(height: 3)
+            .frame(height: 1)
+            .overlay(ColorsApp.white.opacity(0.2))
+
           HStack {
             Text("Taxa de entrega")
               .font(.custom(FontsApp.interRegular, size: 17))
@@ -56,8 +102,9 @@ struct Cart: View {
               .foregroundColor(ColorsApp.white)
           }
           Divider()
-            .foregroundColor(ColorsApp.white)
-            .frame(height: 3)
+            .frame(minHeight: 1)
+            .overlay(ColorsApp.white.opacity(0.2))
+
           CustomButtonPay(handleButton: {}, width: .infinity, title: "Pagar agora")
             .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
         }

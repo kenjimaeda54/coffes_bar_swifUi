@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Order: View {
   let order: CartOderModel
+  let handlePlusQuantity: () -> Void
+  let handleMinusQuantity: () -> Void
 
   var body: some View {
     HStack(spacing: 20) {
@@ -29,13 +31,14 @@ struct Order: View {
       }
       Spacer()
       HStack {
-        CustomButtonAddOrMinusItens(nameImage: "minus")
+        CustomButtonAddOrMinusItens(nameImage: "minus", action: handleMinusQuantity)
 
         Text("\(order.quantity)")
           .font(.custom(FontsApp.interLight, size: 15))
           .foregroundColor(ColorsApp.beige)
+          .frame(width: 16)
 
-        CustomButtonAddOrMinusItens(nameImage: "plus")
+        CustomButtonAddOrMinusItens(nameImage: "plus", action: handlePlusQuantity)
       }
     }
     .padding(EdgeInsets(top: 5, leading: 10, bottom: 7, trailing: 7))
@@ -47,7 +50,7 @@ struct Order: View {
 
 struct Order_Previews: PreviewProvider {
   static var previews: some View {
-    Order(order: cartOderMock[0])
+    Order(order: cartOderMock[0], handlePlusQuantity: {}, handleMinusQuantity: {})
       .previewLayout(.sizeThatFits)
   }
 }

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CustomButtonAddOrMinusItens: View {
   var nameImage: String
+  var action: () -> Void
   var body: some View {
-    Button(action: {}, label: {
+    Button(action: { action() }, label: {
       Image(systemName: nameImage)
         .frame(width: 20, height: 15)
         .foregroundColor(ColorsApp.brown)
@@ -23,6 +24,6 @@ struct CustomButtonAddOrMinusItens: View {
 
 struct CustomButton_Previews: PreviewProvider {
   static var previews: some View {
-    CustomButtonAddOrMinusItens(nameImage: "plus")
+    CustomButtonAddOrMinusItens(nameImage: "plus", action: {})
   }
 }

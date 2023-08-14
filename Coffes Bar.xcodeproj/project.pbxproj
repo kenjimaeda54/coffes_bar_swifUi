@@ -21,6 +21,10 @@
 		8120C0852A8456D70086BD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8120C0842A8456D70086BD41 /* Assets.xcassets */; };
 		8120C0882A8456D70086BD41 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8120C0872A8456D70086BD41 /* Preview Assets.xcassets */; };
 		8120C0902A845AA10086BD41 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120C08F2A845AA10086BD41 /* Colors.swift */; };
+		8122AF612A8A5424003C961B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8122AF602A8A5424003C961B /* URLImage */; };
+		8122AF632A8A5424003C961B /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 8122AF622A8A5424003C961B /* URLImageStore */; };
+		81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BEE2A8A58D700AAD038 /* CornerRadius.swift */; };
+		81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */; };
 		818EF8D82A845E4E00DC0E90 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EF8D72A845E4E00DC0E90 /* Fonts.swift */; };
 		818EF8FE2A846A2D00DC0E90 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */; };
 		818EF8FF2A846A2D00DC0E90 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F62A846A2D00DC0E90 /* Inter-ExtraLight.ttf */; };
@@ -55,6 +59,8 @@
 		8120C0842A8456D70086BD41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8120C0872A8456D70086BD41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8120C08F2A845AA10086BD41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		81554BEE2A8A58D700AAD038 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
 		818EF8D62A845DCA00DC0E90 /* Coffes-Bar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Coffes-Bar-Info.plist"; sourceTree = SOURCE_ROOT; };
 		818EF8D72A845E4E00DC0E90 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8122AF632A8A5424003C961B /* URLImageStore in Frameworks */,
+				8122AF612A8A5424003C961B /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +157,7 @@
 		8120C07F2A8456D60086BD41 /* Coffes Bar */ = {
 			isa = PBXGroup;
 			children = (
+				81554BED2A8A58BB00AAD038 /* Modifiers */,
 				810C273E2A85A35100038409 /* Store */,
 				810C273B2A855EFC00038409 /* Utility */,
 				810C27382A85539000038409 /* View */,
@@ -191,6 +200,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		81554BED2A8A58BB00AAD038 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				81554BEE2A8A58D700AAD038 /* CornerRadius.swift */,
+				81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		818EF8D92A845FDA00DC0E90 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +239,10 @@
 			dependencies = (
 			);
 			name = "Coffes Bar";
+			packageProductDependencies = (
+				8122AF602A8A5424003C961B /* URLImage */,
+				8122AF622A8A5424003C961B /* URLImageStore */,
+			);
 			productName = "Coffes Bar";
 			productReference = 8120C07D2A8456D60086BD41 /* Coffes Bar.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +271,9 @@
 				Base,
 			);
 			mainGroup = 8120C0742A8456D60086BD41;
+			packageReferences = (
+				8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 8120C07E2A8456D60086BD41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */,
 				810C27442A85B2D700038409 /* DetailsScreen.swift in Sources */,
 				818EF8D82A845E4E00DC0E90 /* Fonts.swift in Sources */,
 				810C27402A85A38100038409 /* StoreHome.swift in Sources */,
@@ -342,6 +368,7 @@
 				810C27482A85B30B00038409 /* FavoriteOrders.swift in Sources */,
 				81D3B5572A8702B000B1FBF1 /* cartOrderMock.swift in Sources */,
 				810C273D2A855F2F00038409 /* Constants.swift in Sources */,
+				81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +573,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8122AF602A8A5424003C961B /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		8122AF622A8A5424003C961B /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8120C0752A8456D60086BD41 /* Project object */;
 }

@@ -30,13 +30,13 @@ struct Order: View {
           .foregroundColor(ColorsApp.white)
       }
       Spacer()
-      HStack {
+      HStack(spacing: 4) {
         CustomButtonAddOrMinusItens(nameImage: "minus", action: handleMinusQuantity)
 
         Text("\(order.quantity)")
-          .font(.custom(FontsApp.interLight, size: 15))
+          .font(.custom(FontsApp.interLight, size: 14))
           .foregroundColor(ColorsApp.beige)
-          .frame(width: 16)
+          .frame(width: 20)
 
         CustomButtonAddOrMinusItens(nameImage: "plus", action: handlePlusQuantity)
       }

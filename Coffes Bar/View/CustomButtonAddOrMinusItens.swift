@@ -13,12 +13,12 @@ struct CustomButtonAddOrMinusItens: View {
   var body: some View {
     Button(action: { action() }, label: {
       Image(systemName: nameImage)
-        .frame(width: 20, height: 15)
+        .frame(width: 13, height: 10)
         .foregroundColor(ColorsApp.brown)
-        .padding(EdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5))
+        .padding(EdgeInsets(top: 10, leading: 6, bottom: 10, trailing: 6))
     })
     .background(ColorsApp.beige)
-    .cornerRadius(5)
+    .cornerRadius(4)
   }
 }
 

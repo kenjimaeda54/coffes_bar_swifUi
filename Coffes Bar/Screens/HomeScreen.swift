@@ -80,7 +80,7 @@ struct HomeScreen: View {
           LazyVGrid(columns: gridItem) {
             ForEach(coffeesMock) { coffee in
               // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView
-              NavigationLink(destination: DetailsScreen(coffee: coffee)) {
+              NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
                 CoffeeItem(
                   coffee: coffee,
                   listIdSelected: $listIdSelected,

@@ -41,6 +41,7 @@
 		81D3B5532A86AECD00B1FBF1 /* CartObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */; };
 		81D3B5552A87023000B1FBF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5542A87023000B1FBF1 /* Order.swift */; };
 		81D3B5572A8702B000B1FBF1 /* cartOrderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5562A8702B000B1FBF1 /* cartOrderMock.swift */; };
+		81D96AA92A8AF9030027705C /* StateNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D96AA82A8AF9030027705C /* StateNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartObservable.swift; sourceTree = "<group>"; };
 		81D3B5542A87023000B1FBF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		81D3B5562A8702B000B1FBF1 /* cartOrderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartOrderMock.swift; sourceTree = "<group>"; };
+		81D96AA82A8AF9030027705C /* StateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				810C273C2A855F2F00038409 /* Constants.swift */,
 				81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */,
+				81D96AA82A8AF9030027705C /* StateNavigation.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				81C64BA22A8945D500A4EE12 /* CustomButtonAddOrMinusItens.swift in Sources */,
 				810C27482A85B30B00038409 /* FavoriteOrders.swift in Sources */,
 				81D3B5572A8702B000B1FBF1 /* cartOrderMock.swift in Sources */,
+				81D96AA92A8AF9030027705C /* StateNavigation.swift in Sources */,
 				810C273D2A855F2F00038409 /* Constants.swift in Sources */,
 				81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */,
 			);

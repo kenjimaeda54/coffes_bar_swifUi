@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
   @ObservedObject var cartOders = CartObservable()
+  @StateObject var state = StateNavigation()
 
   var body: some View {
     TabView {
@@ -16,6 +17,7 @@ struct MainView: View {
         .tabItem {
           Image(systemName: "house.fill")
         }
+        .toolbar(state.hiddeTabView ? .hidden : .visible, for: .tabBar)
 
       Cart(cart: cartOders)
         .tabItem {
@@ -51,6 +53,7 @@ struct MainView: View {
         alpha: 1
       )
     }
+    .environmentObject(state)
   }
 }
 

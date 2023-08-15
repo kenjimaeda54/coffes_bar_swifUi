@@ -11,6 +11,9 @@ import URLImage
 struct DetailsScreen: View {
   let coffee: CoffeesModel
   @Environment(\.dismiss) var dimiss
+  @EnvironmentObject private var state: StateNavigation
+  @ObservedObject var order: CartObservable
+  @State private var isAddedCart = false
 
   func handleBack() {
     dimiss()
@@ -39,29 +42,45 @@ struct DetailsScreen: View {
           Text(coffee.description)
             .foregroundColor(ColorsApp.white)
             .modifier(FontWithLineHeight(font: UIFont(name: FontsApp.interLight, size: 20)!, lineHeight: 30))
-
-          Spacer(minLength: 35)
-          HStack {
-            VStack(alignment: .leading) {
-              Text("Preço")
-                .font(.custom(FontsApp.interLight, size: 17))
-                .foregroundColor(ColorsApp.white)
-
-              Text(coffee.price)
-                .font(.custom(FontsApp.interBold, size: 20))
-                .foregroundColor(ColorsApp.white)
-            }
-
-            CustomButtonPay(handleButton: {}, width: .infinity, title: "Comprar agora")
-          }
         }
         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
       }
+
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
       .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
     }
+    // para adicionar no finalzinho o botão
+    .safeAreaInset(edge: VerticalEdge.bottom) {
+      HStack {
+        VStack(alignment: .leading) {
+          Text("Preço")
+            .font(.custom(FontsApp.interLight, size: 17))
+            .foregroundColor(ColorsApp.white)
+
+          Text(coffee.price)
+            .font(.custom(FontsApp.interBold, size: 20))
+            .foregroundColor(ColorsApp.white)
+        }
+
+        CustomButtonPay(
+          handleButton: {},
+          width: .infinity,
+          title: isAddedCart ? "Adicionado" : "Adicionar",
+          color: isAddedCart ? ColorsApp.brown : nil,
+          textColor: isAddedCart ? ColorsApp.white : nil
+        )
+        .disabled(isAddedCart)
+      }
+      .padding(EdgeInsets(top: 20, leading: 20, bottom: 60, trailing: 20))
+    }
+    .onAppear {
+      state.hiddeTabView = true
+      isAddedCart = order.cartOrder.contains(where: { $0.id == coffee.id })
+    }
+    .onDisappear {
+      state.hiddeTabView = false
+    }
     .ignoresSafeArea(.all)
-    .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
     .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
     .scrollBounceBehavior(.basedOnSize)
     .navigationBarBackButtonHidden(true)
@@ -80,6 +99,6 @@ struct DetailsScreen: View {
 
 struct DetailsScreen_Previews: PreviewProvider {
   static var previews: some View {
-    DetailsScreen(coffee: coffeesMock[0])
+    DetailsScreen(coffee: coffeesMock[0], order: CartObservable())
   }
 }

@@ -105,7 +105,7 @@ struct Cart: View {
             .frame(minHeight: 1)
             .overlay(ColorsApp.white.opacity(0.2))
 
-          CustomButtonPay(handleButton: {}, width: .infinity, title: "Pagar agora")
+          CustomButtonPay(handleButton: {}, width: .infinity, title: "Pagar agora", color: nil, textColor: nil)
             .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
         }
         .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))

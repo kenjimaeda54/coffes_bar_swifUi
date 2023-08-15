@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import URLImage
+import URLImageStore
 
 @main
 struct Coffes_BarApp: App {
   var body: some Scene {
-    WindowGroup {
+    // PARA CACHEAR A IMAGEM E EVITAR RERENDER
+    let urlImageService = URLImageService(
+      fileStore: URLImageFileStore(),
+      inMemoryStore: URLImageInMemoryStore()
+    )
+    return WindowGroup {
       MainView()
+        .environment(\.urlImageService, urlImageService)
     }
   }
 }

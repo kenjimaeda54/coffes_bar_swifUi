@@ -19,6 +19,18 @@ struct DetailsScreen: View {
     dimiss()
   }
 
+  func handleAddProduct() {
+    let newOrder = CartOderModel(
+      id: coffee.id,
+      urlPhoto: coffee.urlPhoto,
+      quantity: 1,
+      price: coffee.price,
+      name: coffee.name
+    )
+    order.cartOrder.append(newOrder)
+    isAddedCart = true
+  }
+
   var body: some View {
     ScrollView {
       VStack(spacing: 25) {
@@ -63,7 +75,7 @@ struct DetailsScreen: View {
         }
 
         CustomButtonPay(
-          handleButton: {},
+          handleButton: handleAddProduct,
           width: .infinity,
           title: isAddedCart ? "Adicionado" : "Adicionar",
           color: isAddedCart ? ColorsApp.brown : nil,

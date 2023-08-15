@@ -10,17 +10,13 @@ import SwiftUI
 struct HomeScreen: View {
   @State private var searchMovie = ""
   @ObservedObject var cart: CartObservable
-  @State private var listIdSelected: [String] = []
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
-    if let index = listIdSelected.firstIndex(where: { $0 == itemSelected.id }) {
-      listIdSelected.remove(at: index)
-      let indexOrder = cart.cartOrder.firstIndex(where: { $0.id == itemSelected.id })
-      cart.cartOrder.remove(at: indexOrder!)
-
+    if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
+      let index = cart.cartOrder.firstIndex(where: { $0.id == itemSelected.id })
+      cart.cartOrder.remove(at: index!)
     } else {
-      listIdSelected.append(itemSelected.id)
-      let cartOrder = CartOderModel(
+      let order = CartOderModel(
         id: itemSelected.id,
         urlPhoto: itemSelected.urlPhoto,
         quantity: 1,
@@ -28,7 +24,7 @@ struct HomeScreen: View {
         name: itemSelected.name
       )
 
-      cart.cartOrder.append(cartOrder)
+      cart.cartOrder.append(order)
     }
   }
 
@@ -82,8 +78,8 @@ struct HomeScreen: View {
               // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView
               NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
                 CoffeeItem(
-                  coffee: coffee,
-                  listIdSelected: $listIdSelected,
+                  coffee: coffee, order: cart,
+
                   handleSelectedCoffee: { handleSelectedCoffee(coffee) }
                 )
               }

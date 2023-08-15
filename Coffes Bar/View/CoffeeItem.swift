@@ -10,7 +10,7 @@ import URLImage
 
 struct CoffeeItem: View {
   let coffee: CoffeesModel
-  @Binding var listIdSelected: [String]
+  @ObservedObject var order: CartObservable
   let handleSelectedCoffee: () -> Void
 
   var body: some View {
@@ -23,25 +23,28 @@ struct CoffeeItem: View {
       Text(coffee.name)
         .lineLimit(2)
         .font(.custom(FontsApp.interLight, size: 17))
-        .foregroundColor(listIdSelected.contains(coffee.id) ? ColorsApp.black : ColorsApp.white)
+        .foregroundColor(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.black : ColorsApp.white)
         .frame(height: 50)
 
       Button { handleSelectedCoffee() } label: {
         Text(coffee.price)
           .padding(EdgeInsets(top: 5, leading: 7, bottom: 5, trailing: 0))
           .font(.custom(FontsApp.interLight, size: 16))
-          .foregroundColor(listIdSelected.contains(coffee.id) ? ColorsApp.black : ColorsApp.white)
+          .foregroundColor(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.black : ColorsApp.white)
         Spacer()
         ZStack {
-          Image(systemName: listIdSelected.contains(coffee.id) ? "minus" : "plus")
+          Image(systemName: order.cartOrder.contains(where: { $0.id == coffee.id }) ? "minus" : "plus")
             .resizable()
             .scaledToFit()
             .frame(width: 15, height: 15)
-            .foregroundColor(listIdSelected.contains(coffee.id) ? ColorsApp.beige : ColorsApp.brown)
+            .foregroundColor(
+              order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.beige : ColorsApp
+                .brown
+            )
         }
         .frame(width: 30, height: 30)
         .scaledToFit()
-        .background(listIdSelected.contains(coffee.id) ? ColorsApp.brown : ColorsApp.beige)
+        .background(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.brown : ColorsApp.beige)
         .cornerRadius(7)
       }
       .background(ColorsApp.gray)
@@ -49,7 +52,7 @@ struct CoffeeItem: View {
       .cornerRadius(7)
     }
     .padding(EdgeInsets(top: 5, leading: 10, bottom: 7, trailing: 7))
-    .background(listIdSelected.contains(coffee.id) ? ColorsApp.beige : ColorsApp.brown)
+    .background(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.beige : ColorsApp.brown)
     .cornerRadius(5)
     .frame(width: 130, height: 250)
   }
@@ -57,7 +60,7 @@ struct CoffeeItem: View {
 
 struct CoffeeItem_Previews: PreviewProvider {
   static var previews: some View {
-    CoffeeItem(coffee: coffeesMock[3], listIdSelected: .constant([""]), handleSelectedCoffee: {})
+    CoffeeItem(coffee: coffeesMock[3], order: CartObservable(), handleSelectedCoffee: {})
       .previewLayout(.device)
   }
 }

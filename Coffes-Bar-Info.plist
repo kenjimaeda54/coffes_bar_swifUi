@@ -14,5 +14,7 @@
 		<string>Inter-Thin.ttf</string>
 		<string>Pacifico-Regular.ttf</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&quot;App precisa acesso a sua localização&quot;</string>
 </dict>
 </plist>

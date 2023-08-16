@@ -38,10 +38,7 @@ struct DetailsScreen: View {
           image
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .modifier(CornerRadiusStyle(radius: 90, corners: [.bottomLeft, .bottomRight])).frame(
-              width: .infinity,
-              height: 320
-            )
+            .cornerRadius(30, corners: [.bottomLeft, .bottomRight])
         }
 
         VStack(alignment: .leading, spacing: 5) {
@@ -54,6 +51,9 @@ struct DetailsScreen: View {
           Text(coffee.description)
             .foregroundColor(ColorsApp.white)
             .modifier(FontWithLineHeight(font: UIFont(name: FontsApp.interLight, size: 20)!, lineHeight: 30))
+
+            // se não conseguir mostrar o texto todo, ficar colocando 3 pontinhos no final sem que você queria
+            .fixedSize(horizontal: false, vertical: true)
         }
         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
       }

@@ -10,6 +10,8 @@ struct Cart: View {
   @ObservedObject var cart: CartObservable
   @State private var tax = Double.random(in: 1..<7)
   @State private var valor: Double = 0
+  @State private var idCoffeeSelected = "1"
+  @State private var offsetAnimated: CGFloat = 0.0
 
   func conveterStringCurrencyInDouble(_ value: String) -> Double {
     // replace string https://www.tutorialspoint.com/swift-program-to-replace-a-character-at-a-specific-index#:~:text=Method%203%3A%20Using%20the%20replacingCharacters,by%20the%20given%20replacement%20character.
@@ -82,12 +84,24 @@ struct Cart: View {
             .font(.custom(FontsApp.interBold, size: 20))
             .foregroundColor(ColorsApp.white)
           VStack {
+            // como pegar o index
+            // https://alejandromp.com/blog/swiftui-enumerated/
+            // no meu caso e melhor usar verificação de index, pois se não houver o index
+            // não posso tentar remover
             ForEach(cart.cartOrder) { coffee in
               Order(
                 order: coffee,
                 handlePlusQuantity: { handlePlusQuantity(coffee) },
-                handleMinusQuantity: { handleMinusQuantity(coffee) }
+                handleMinusQuantity: { handleMinusQuantity(coffee) },
+                removal: {
+                  if let index = cart.cartOrder.firstIndex(where: { $0.id == coffee.id }) {
+                    let order = cart.cartOrder.remove(at: index)
+                    valor -= (conveterStringCurrencyInDouble(order.price) * Double(order.quantity))
+                  }
+                }
               )
+              .offset(x: idCoffeeSelected == coffee.id ? offsetAnimated : 0)
+              .animation(.spring(), value: true)
             }
           }
           // para alinhar no topo usa dentro do frame
@@ -137,7 +151,7 @@ struct Cart: View {
       }
     }
     .onAppear {
-      valor = cart.cartOrder.reduce(0) { $0 + conveterStringCurrencyInDouble($1.price) }
+      valor = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
     }
   }
 }

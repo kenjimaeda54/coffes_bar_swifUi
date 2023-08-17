@@ -12,30 +12,56 @@ struct FinishPaymentScreen: View {
   @StateObject var locationManager = LocationManager()
   @Environment(\.dismiss) var dimiss
   @EnvironmentObject private var state: StateNavigation
-  @State private var isSheetPresented = false
+  @State private var isSheetPresentedStreet = false
+  @State private var isSheetPresentedDistrict = false
+  @State private var isSheetPresentedStreetNumber = false
+  @State private var isSheetPresentedCity = false
+  @State private var streetNumber = ""
+  @State private var district = ""
+  @State private var city = ""
 
   func handleBack() {
     dimiss()
   }
 
-  func handleAction() {
-    isSheetPresented = true
+  func returnTextIfValueFalse(conditional: Bool, value: String, optionalValue: String) -> String {
+    return conditional ? optionalValue : value
   }
 
   var body: some View {
     VStack {
-      InputAddress {
-        Button(action: handleAction) {
-          Text("Insira o endereço")
-            .font(.custom(FontsApp.interLight, size: 17))
-            .foregroundColor(ColorsApp.gray)
-        }
-      }
-      .sheet(isPresented: $isSheetPresented) {
-        SheetTextFieldView()
-          .presentationDetents([.fraction(0.15)])
-          .presentationDragIndicator(.hidden)
-      }
+      InputAddress(
+        isSheetPresented: $isSheetPresentedStreet,
+        labelText: returnTextIfValueFalse(
+          conditional: locationManager.addressUser.street.isEmpty,
+          value: locationManager.addressUser.street,
+          optionalValue: "Coloque o nome da rua"
+        )
+      )
+      InputAddress(
+        isSheetPresented: $isSheetPresentedStreetNumber,
+        labelText: returnTextIfValueFalse(
+          conditional: locationManager.addressUser.numberStreet.isEmpty,
+          value: locationManager.addressUser.numberStreet,
+          optionalValue: "Coloque numero da rua"
+        )
+      )
+      InputAddress(
+        isSheetPresented: $isSheetPresentedDistrict,
+        labelText: returnTextIfValueFalse(
+          conditional: locationManager.addressUser.district.isEmpty,
+          value: locationManager.addressUser.district,
+          optionalValue: "Coloque o nome do bairro"
+        )
+      )
+      InputAddress(
+        isSheetPresented: $isSheetPresentedCity,
+        labelText: returnTextIfValueFalse(
+          conditional: locationManager.addressUser.city.isEmpty,
+          value: locationManager.addressUser.city,
+          optionalValue: "Coloque o nome da cidade"
+        )
+      )
     }
     .onAppear {
       state.hiddeTabView = true

@@ -25,6 +25,7 @@
 		8122AF632A8A5424003C961B /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 8122AF622A8A5424003C961B /* URLImageStore */; };
 		81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BEE2A8A58D700AAD038 /* CornerRadius.swift */; };
 		81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */; };
+		817765E02A8E2C6D00FC5CC6 /* SheetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817765DF2A8E2C6D00FC5CC6 /* SheetTextField.swift */; };
 		818EF8D82A845E4E00DC0E90 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EF8D72A845E4E00DC0E90 /* Fonts.swift */; };
 		818EF8FE2A846A2D00DC0E90 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */; };
 		818EF8FF2A846A2D00DC0E90 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F62A846A2D00DC0E90 /* Inter-ExtraLight.ttf */; };
@@ -66,6 +67,7 @@
 		8120C08F2A845AA10086BD41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		81554BEE2A8A58D700AAD038 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
+		817765DF2A8E2C6D00FC5CC6 /* SheetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTextField.swift; sourceTree = "<group>"; };
 		818EF8D62A845DCA00DC0E90 /* Coffes-Bar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Coffes-Bar-Info.plist"; sourceTree = SOURCE_ROOT; };
 		818EF8D72A845E4E00DC0E90 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				81C64BA12A8945D500A4EE12 /* CustomButtonAddOrMinusItens.swift */,
 				81C64BA32A894D3B00A4EE12 /* CustomButtonPay.swift */,
 				8197311A2A8D9465003A040E /* InputAddress.swift */,
+				817765DF2A8E2C6D00FC5CC6 /* SheetTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				810C27322A850DF400038409 /* coffeesMock.swift in Sources */,
 				81D3B5552A87023000B1FBF1 /* Order.swift in Sources */,
 				81C64BA22A8945D500A4EE12 /* CustomButtonAddOrMinusItens.swift in Sources */,
+				817765E02A8E2C6D00FC5CC6 /* SheetTextField.swift in Sources */,
 				810C27482A85B30B00038409 /* FavoriteOrders.swift in Sources */,
 				81D3B5572A8702B000B1FBF1 /* cartOrderMock.swift in Sources */,
 				81D96AA92A8AF9030027705C /* StateNavigation.swift in Sources */,

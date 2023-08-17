@@ -4,7 +4,6 @@
 //
 //  Created by kenjimaeda on 16/08/23.
 //
-
 import PartialSheet
 import SwiftUI
 
@@ -12,58 +11,41 @@ enum FocusedField {
   case firstInput
 }
 
-struct InputAddress<Content: View>: View {
-	//exemplo como passar uma view pro Swiftui
-  let viewBuilder: () -> Content
-
-  func handle() {}
+struct InputAddress: View {
+  // exemplo como passar uma view pro Swiftui
+  @Binding var isSheetPresented: Bool
+  @State private var textField = ""
+  let labelText: String
 
   var body: some View {
-    VStack(alignment: .leading) {
-      viewBuilder()
-      Divider()
-        .frame(height: 1)
-        .overlay(ColorsApp.white)
+    Button(action: {
+      isSheetPresented = true
+    }, label: {
+      Text(labelText)
+        .foregroundColor(ColorsApp.gray)
+        .font(.custom(FontsApp.interLight, size: 17))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+        .overlay(
+          Divider()
+            .frame(maxWidth: .infinity, maxHeight: 1)
+            .background(ColorsApp.white.opacity(0.5)),
+          alignment: .bottom
+        )
+    })
+    .sheet(isPresented: $isSheetPresented) {
+      SheetTextField(
+        valueTextField: $textField,
+        titleSheetPresented: labelText
+      )
+      .presentationDetents([.fraction(0.15)])
+      .presentationDragIndicator(.hidden)
     }
-    .frame(width: .infinity)
   }
 }
 
 struct InputAddress_Previews: PreviewProvider {
   static var previews: some View {
-    InputAddress {
-      Button(action: {}) {
-        Text("Insira o endereço")
-          .font(.custom(FontsApp.interLight, size: 17))
-          .foregroundColor(ColorsApp.gray)
-      }
-    }
-  }
-}
-
-struct SheetTextFieldView: View {
-  @State private var text: String = ""
-  @FocusState private var focusedField: FocusedField?
-  // https://www.hackingwithswift.com/quick-start/swiftui/how-to-make-a-textfield-or-texteditor-have-default-focus
-  // aplicar focus
-  var body: some View {
-    VStack {
-      VStack(alignment: .center, spacing: 10) {
-        TextField("Address", text: self.$text)
-          .font(.custom(FontsApp.interRegular, size: 18))
-          .foregroundColor(ColorsApp.black)
-          .focused($focusedField, equals: .firstInput)
-          .padding(EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 10))
-          .background(
-            RoundedRectangle(cornerRadius: 7)
-              .stroke(ColorsApp.gray, lineWidth: 1)
-          )
-      }
-    }
-    .frame(height: 100, alignment: .center)
-    .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
-    .onAppear {
-      focusedField = .firstInput
-    }
+    InputAddress(isSheetPresented: .constant(false), labelText: "Coloque nome da arua")
   }
 }

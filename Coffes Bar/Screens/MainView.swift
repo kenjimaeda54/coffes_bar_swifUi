@@ -5,6 +5,7 @@
 //  Created by kenjimaeda on 10/08/23.
 //
 
+import PartialSheet
 import SwiftUI
 
 struct MainView: View {

@@ -11,7 +11,7 @@ import URLImage
 struct DetailsScreen: View {
   let coffee: CoffeesModel
   @Environment(\.dismiss) var dimiss
-  @EnvironmentObject private var state: StateNavigation
+  @EnvironmentObject private var state: StateNavigationTabView
   @ObservedObject var order: CartObservable
   @State private var isAddedCart = false
 

@@ -10,25 +10,29 @@ import SwiftUI
 
 struct MainView: View {
   @ObservedObject var cartOders = CartObservable()
-  @StateObject var state = StateNavigation()
+  @StateObject var stateTabView = StateNavigationTabView()
 
   var body: some View {
-    TabView {
+    TabView(selection: $stateTabView.tagSelected) {
       HomeScreen(cart: cartOders)
         .tabItem {
           Image(systemName: "house.fill")
         }
-        .toolbar(state.hiddeTabView ? .hidden : .visible, for: .tabBar)
+        .toolbar(stateTabView.hiddeTabView ? .hidden : .visible, for: .tabBar)
+        .tag(0)
 
       Cart(cart: cartOders)
-        .tabItem {
-          Image(systemName: "cart.fill")
-        }
+
+          .tabItem {
+            Image(systemName: "cart.fill")
+          }
+          .tag(1)
 
       FavoriteOrders()
         .tabItem {
           Image(systemName: "heart.fill")
         }
+        .tag(2)
     }
     .edgesIgnoringSafeArea(.all)
     // tint color e icone selecionado
@@ -54,7 +58,7 @@ struct MainView: View {
         alpha: 1
       )
     }
-    .environmentObject(state)
+    .environmentObject(stateTabView)
   }
 }
 

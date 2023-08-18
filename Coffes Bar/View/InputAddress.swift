@@ -21,10 +21,11 @@ struct InputAddress: View {
     Button(action: {
       isSheetPresented = true
     }, label: {
-      Text(labelText)
+      Text(textField.isEmpty ? labelText : textField)
         .foregroundColor(ColorsApp.gray)
         .font(.custom(FontsApp.interLight, size: 17))
         .frame(maxWidth: .infinity, alignment: .leading)
+        .lineLimit(1)
         .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
         .overlay(
           Divider()
@@ -36,7 +37,7 @@ struct InputAddress: View {
     .sheet(isPresented: $isSheetPresented) {
       SheetTextField(
         valueTextField: $textField,
-        titleSheetPresented: labelText
+        titleSheetPresented: textField.isEmpty ? labelText : textField
       )
       .presentationDetents([.fraction(0.15)])
       .presentationDragIndicator(.hidden)

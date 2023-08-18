@@ -7,6 +7,7 @@
 
 import Foundation
 
-class StateNavigation: ObservableObject {
+class StateNavigationTabView: ObservableObject {
   @Published var hiddeTabView: Bool = false
+  @Published var tagSelected = 0
 }

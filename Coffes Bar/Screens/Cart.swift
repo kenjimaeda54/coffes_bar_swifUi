@@ -9,10 +9,13 @@ import SwiftUI
 struct Cart: View {
   @ObservedObject var cart: CartObservable
   @State private var tax = Double.random(in: 1..<7)
-  @State private var valor: Double = 0
+  @State private var value: Double = 0
   @State private var idCoffeeSelected = "1"
   @State private var offsetAnimated: CGFloat = 0.0
   @State private var goWhenTrue = false
+  @Environment(\.dismiss) var dimiss
+  @EnvironmentObject private var stateTabView: StateNavigationTabView
+  @StateObject private var stateStackView = StateNavigationStackView()
 
   func conveterStringCurrencyInDouble(_ value: String) -> Double {
     // replace string https://www.tutorialspoint.com/swift-program-to-replace-a-character-at-a-specific-index#:~:text=Method%203%3A%20Using%20the%20replacingCharacters,by%20the%20given%20replacement%20character.
@@ -28,7 +31,7 @@ struct Cart: View {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity < 50 {
         let newQuantity = $0.quantity + 1
-        valor += conveterStringCurrencyInDouble($0.price)
+        value += conveterStringCurrencyInDouble($0.price)
         let newOrder = CartOderModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
@@ -49,7 +52,7 @@ struct Cart: View {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity > 1 {
         let newQuantity = $0.quantity - 1
-        valor -= conveterStringCurrencyInDouble($0.price)
+        value -= conveterStringCurrencyInDouble($0.price)
         let newOrder = CartOderModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
@@ -64,11 +67,6 @@ struct Cart: View {
     }
 
     cart.cartOrder = newOrder
-  }
-
-  func handleNavigation() {
-    print("chegou")
-    goWhenTrue = true
   }
 
   var body: some View {
@@ -103,7 +101,7 @@ struct Cart: View {
                   removal: {
                     if let index = cart.cartOrder.firstIndex(where: { $0.id == coffee.id }) {
                       let order = cart.cartOrder.remove(at: index)
-                      valor -= (conveterStringCurrencyInDouble(order.price) * Double(order.quantity))
+                      value -= (conveterStringCurrencyInDouble(order.price) * Double(order.quantity))
                     }
                   }
                 )
@@ -118,64 +116,40 @@ struct Cart: View {
               .frame(height: 1)
               .overlay(ColorsApp.white.opacity(0.2))
 
-            HStack {
-              Text("Taxa de entrega")
-                .font(.custom(FontsApp.interRegular, size: 17))
-                .foregroundColor(ColorsApp.white)
-              Spacer()
-              Text("R$ \(String(format: "%.2f", tax))")
-                .font(.custom(FontsApp.interBold, size: 19))
-                .foregroundColor(ColorsApp.white)
-            }
-            HStack {
-              Text("Valor")
-                .font(.custom(FontsApp.interRegular, size: 17))
-                .foregroundColor(ColorsApp.white)
-              Spacer()
-              Text("R$ \(String(format: "%.2f", valor))")
-                .font(.custom(FontsApp.interBold, size: 19))
-                .foregroundColor(ColorsApp.white)
-            }
-            Divider()
-              .frame(minHeight: 1)
-              .overlay(ColorsApp.white.opacity(0.2))
-            HStack {
-              Text("Total")
-                .font(.custom(FontsApp.interRegular, size: 17))
-                .foregroundColor(ColorsApp.white)
-              Spacer()
-              Text("R$ \(String(format: "%.2f", valor + tax))")
-                .font(.custom(FontsApp.interBold, size: 19))
-                .foregroundColor(ColorsApp.white)
-            }
+            OverviewPayment(tax: tax, value: value)
 
             CustomButtonPay(
-              handleButton: handleNavigation,
+              handleButton: { stateStackView.isActiveFinishPayment = true },
               width: .infinity,
-              title: "Pagar agora",
+              title: "Finalizar compra",
               color: nil,
               textColor: nil
             )
             .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
-            .navigationDestination(isPresented: $goWhenTrue) {
-              FinishPaymentScreen()
+            .navigationDestination(isPresented: $stateStackView.isActiveFinishPayment) {
+              FinishPaymentScreen(cart: cart, tax: tax, value: value)
             }
+          }
+          .onAppear {
+            stateStackView.isActiveFinishPayment = false
           }
           .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
           .frame(width: .infinity)
           .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
           .onAppear {
-            valor = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
-            goWhenTrue = false
+            value = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
+            stateTabView.hiddeTabView = false
           }
         }
       }
     }
+    .environmentObject(stateStackView)
   }
 }
 
 struct Cart_Previews: PreviewProvider {
   static var previews: some View {
     Cart(cart: CartObservable())
+      .environmentObject(StateNavigationTabView())
   }
 }

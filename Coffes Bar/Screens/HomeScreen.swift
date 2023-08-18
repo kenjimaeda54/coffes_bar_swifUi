@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
   @State private var searchMovie = ""
   @ObservedObject var cart: CartObservable
+  @EnvironmentObject private var stateTabView: StateNavigationTabView
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
@@ -79,7 +80,6 @@ struct HomeScreen: View {
               NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
                 CoffeeItem(
                   coffee: coffee, order: cart,
-
                   handleSelectedCoffee: { handleSelectedCoffee(coffee) }
                 )
               }
@@ -89,6 +89,10 @@ struct HomeScreen: View {
       }
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
       .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
+      .navigationBarBackButtonHidden(true)
+      .onAppear {
+        stateTabView.hiddeTabView = false
+      }
     }
   }
 }
@@ -96,5 +100,6 @@ struct HomeScreen: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen(cart: CartObservable())
+      .environmentObject(StateNavigationTabView())
   }
 }

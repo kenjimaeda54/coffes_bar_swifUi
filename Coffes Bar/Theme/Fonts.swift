@@ -17,8 +17,5 @@ struct FontsApp {
   static let interRegular = "Inter-Regular"
   static let interSemiBold = "Inter-SemiBold"
   static let interThin = "Inter-Thin"
-  static let caveatMedium = "Caveat-Medium"
-  static let caveatRegular = "Caveat-Regular"
-  static let caveatSemiBold = "Caveat-SemiBold"
   static let pacificoRegular = "Pacifico-Regular"
 }

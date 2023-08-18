@@ -10,18 +10,25 @@ import SwiftUI
 
 struct FinishPaymentScreen: View {
   @StateObject var locationManager = LocationManager()
-  @Environment(\.dismiss) var dimiss
-  @EnvironmentObject private var state: StateNavigation
+  @ObservedObject var cart: CartObservable
+  @Environment(\.dismiss) var dismiss
+  @EnvironmentObject private var stateTabView: StateNavigationTabView
+  @EnvironmentObject private var stateStack: StateNavigationStackView
   @State private var isSheetPresentedStreet = false
   @State private var isSheetPresentedDistrict = false
   @State private var isSheetPresentedStreetNumber = false
   @State private var isSheetPresentedCity = false
   @State private var streetNumber = ""
+  @State private var street = ""
   @State private var district = ""
   @State private var city = ""
+  @State var goWhenTrue = false
+
+  let tax: Double
+  let value: Double
 
   func handleBack() {
-    dimiss()
+    dismiss()
   }
 
   func returnTextIfValueFalse(conditional: Bool, value: String, optionalValue: String) -> String {
@@ -29,59 +36,107 @@ struct FinishPaymentScreen: View {
   }
 
   var body: some View {
-    VStack {
-      InputAddress(
-        isSheetPresented: $isSheetPresentedStreet,
-        labelText: returnTextIfValueFalse(
-          conditional: locationManager.addressUser.street.isEmpty,
-          value: locationManager.addressUser.street,
-          optionalValue: "Coloque o nome da rua"
-        )
-      )
-      InputAddress(
-        isSheetPresented: $isSheetPresentedStreetNumber,
-        labelText: returnTextIfValueFalse(
-          conditional: locationManager.addressUser.numberStreet.isEmpty,
-          value: locationManager.addressUser.numberStreet,
-          optionalValue: "Coloque numero da rua"
-        )
-      )
-      InputAddress(
-        isSheetPresented: $isSheetPresentedDistrict,
-        labelText: returnTextIfValueFalse(
-          conditional: locationManager.addressUser.district.isEmpty,
-          value: locationManager.addressUser.district,
-          optionalValue: "Coloque o nome do bairro"
-        )
-      )
-      InputAddress(
-        isSheetPresented: $isSheetPresentedCity,
-        labelText: returnTextIfValueFalse(
-          conditional: locationManager.addressUser.city.isEmpty,
-          value: locationManager.addressUser.city,
-          optionalValue: "Coloque o nome da cidade"
-        )
-      )
-    }
-    .onAppear {
-      state.hiddeTabView = true
-    }
-    .onDisappear {
-      state.hiddeTabView = false
-    }
-    .ignoresSafeArea(.all)
-    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
-    .navigationBarBackButtonHidden(true)
-    .toolbar {
-      ToolbarItem(placement: .navigationBarLeading) {
-        Button(action: handleBack) {
-          Image(systemName: "chevron.left")
-            .foregroundColor(
-              ColorsApp.white
+    NavigationStack {
+      VStack(alignment: .leading, spacing: 10) {
+        HStack {
+          InputAddress(
+            isSheetPresented: $isSheetPresentedStreet,
+            labelText: returnTextIfValueFalse(
+              conditional: locationManager.addressUser.street.isEmpty,
+              value: locationManager.addressUser.street,
+              optionalValue: "Nome da rua"
             )
+          )
+          InputAddress(
+            isSheetPresented: $isSheetPresentedStreetNumber,
+            labelText: returnTextIfValueFalse(
+              conditional: locationManager.addressUser.numberStreet.isEmpty,
+              value: locationManager.addressUser.numberStreet,
+              optionalValue: "Numero da rua"
+            )
+          )
         }
+        InputAddress(
+          isSheetPresented: $isSheetPresentedDistrict,
+          labelText: returnTextIfValueFalse(
+            conditional: locationManager.addressUser.district.isEmpty,
+            value: locationManager.addressUser.district,
+            optionalValue: "Coloque o nome do bairro"
+          )
+        )
+        InputAddress(
+          isSheetPresented: $isSheetPresentedCity,
+          labelText: returnTextIfValueFalse(
+            conditional: locationManager.addressUser.city.isEmpty,
+            value: locationManager.addressUser.city,
+            optionalValue: "Coloque o nome da cidade"
+          )
+        )
+        Button {
+          locationManager.requestLocationPermission()
+        } label: {
+          Image(systemName: "location.square.fill")
+            .resizable()
+            .frame(width: 25, height: 25)
+            .foregroundColor(ColorsApp.beige)
+        }
+      }
+      .onAppear {
+        stateTabView.hiddeTabView = true
+        stateStack.isActivePurchasePayment = false
+      }
+      .navigationBarBackButtonHidden(true)
+      .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+      .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
+      .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Button(action: handleBack) {
+            Image(systemName: "chevron.left")
+              .foregroundColor(
+                ColorsApp.white
+              )
+          }
+        }
+      }
+      .safeAreaInset(edge: .bottom) {
+        VStack(spacing: 15) {
+          OverviewPayment(tax: tax, value: value)
+          CustomButtonPay(
+            handleButton: { stateStack.isActivePurchasePayment = true },
+            width: .infinity,
+            title: "Tudo certo",
+            color: nil,
+            textColor: nil
+          )
+          .navigationDestination(isPresented: $stateStack.isActivePurchasePayment) {
+            PurchaseMadeScreen(
+              cart: cart,
+              city: returnTextIfValueFalse(
+                conditional: city.isEmpty,
+                value: city,
+                optionalValue: locationManager.addressUser.city
+              ),
+              district: returnTextIfValueFalse(
+                conditional: district.isEmpty,
+                value: district,
+                optionalValue: locationManager.addressUser.district
+              ),
+              street: returnTextIfValueFalse(
+                conditional: street.isEmpty,
+                value: street,
+                optionalValue: locationManager.addressUser.street
+              ),
+              streetNumber: returnTextIfValueFalse(
+                conditional: streetNumber.isEmpty,
+                value: streetNumber,
+                optionalValue: locationManager.addressUser.numberStreet
+              ),
+              valueTotal: tax + value
+            )
+          }
+        }
+        .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
       }
     }
   }
@@ -89,7 +144,8 @@ struct FinishPaymentScreen: View {
 
 struct FinishedPaymentScreen_Previews: PreviewProvider {
   static var previews: some View {
-    FinishPaymentScreen()
-      .environmentObject(StateNavigation())
+    FinishPaymentScreen(cart: CartObservable(), tax: 3.20, value: 12.0)
+      .environmentObject(StateNavigationTabView())
+      .environmentObject(StateNavigationStackView())
   }
 }

@@ -20,7 +20,7 @@ struct DetailsScreen: View {
   }
 
   func handleAddProduct() {
-    let newOrder = CartOderModel(
+    let newOrder = OrdersModel(
       id: coffee.id,
       urlPhoto: coffee.urlPhoto,
       quantity: 1,

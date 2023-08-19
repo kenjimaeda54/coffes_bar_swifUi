@@ -13,6 +13,8 @@ struct MainView: View {
   @StateObject var stateTabView = StateNavigationTabView()
 
   var body: some View {
+    // maneira de navegar via codigo entre as tabs
+    // alem de fazer as tagas criei um objeto que e compartilhado entre todas as views
     TabView(selection: $stateTabView.tagSelected) {
       HomeScreen(cart: cartOders)
         .tabItem {
@@ -28,7 +30,7 @@ struct MainView: View {
           }
           .tag(1)
 
-      FavoriteOrders()
+      FavoriteOrders(order: cartOders)
         .tabItem {
           Image(systemName: "heart.fill")
         }

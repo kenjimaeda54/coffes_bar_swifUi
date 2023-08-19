@@ -15,6 +15,7 @@ struct Cart: View {
   @State private var goWhenTrue = false
   @Environment(\.dismiss) var dimiss
   @EnvironmentObject private var stateTabView: StateNavigationTabView
+  // criei um objeto que vai ser compartilhado com todas as stack pra poder conseguir eliminar todas de uma vez
   @StateObject private var stateStackView = StateNavigationStackView()
 
   func conveterStringCurrencyInDouble(_ value: String) -> Double {
@@ -27,12 +28,12 @@ struct Cart: View {
     return Double(stringSlpited) ?? 0.0
   }
 
-  func handlePlusQuantity(_ coffee: CartOderModel) {
+  func handlePlusQuantity(_ coffee: OrdersModel) {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity < 50 {
         let newQuantity = $0.quantity + 1
         value += conveterStringCurrencyInDouble($0.price)
-        let newOrder = CartOderModel(
+        let newOrder = OrdersModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
           quantity: newQuantity,
@@ -48,12 +49,12 @@ struct Cart: View {
     cart.cartOrder = newOrder
   }
 
-  func handleMinusQuantity(_ coffee: CartOderModel) {
+  func handleMinusQuantity(_ coffee: OrdersModel) {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity > 1 {
         let newQuantity = $0.quantity - 1
         value -= conveterStringCurrencyInDouble($0.price)
-        let newOrder = CartOderModel(
+        let newOrder = OrdersModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
           quantity: newQuantity,
@@ -126,6 +127,8 @@ struct Cart: View {
               textColor: nil
             )
             .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
+            // sempre que navega fica ativo por isso criei um observableobject
+            // na ultim tela que e PurchaseScreeen elimino todas as views ativas
             .navigationDestination(isPresented: $stateStackView.isActiveFinishPayment) {
               FinishPaymentScreen(cart: cart, tax: tax, value: value)
             }

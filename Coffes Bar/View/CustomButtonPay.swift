@@ -22,6 +22,8 @@ struct CustomButtonPay: View {
         .font(.custom(FontsApp.interMedium, size: 20))
         .foregroundColor(textColor ?? ColorsApp.brown)
         .padding(EdgeInsets(top: 13, leading: 0, bottom: 13, trailing: 0))
+        // precisa o conteudo interno ter o memso frame do botao
+        .frame(maxWidth: .infinity)
     }
     // se não funfar width tenta o maxwidth
     .frame(maxWidth: .infinity)

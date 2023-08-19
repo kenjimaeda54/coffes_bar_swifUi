@@ -24,6 +24,7 @@ struct PurchaseMadeScreen: View {
     stateStackView.isActiveFinishPayment = false
     stateStackView.isActivePurchasePayment = false
     stateTabView.tagSelected = 0
+    cart.cartOrder = []
     dismiss()
   }
 

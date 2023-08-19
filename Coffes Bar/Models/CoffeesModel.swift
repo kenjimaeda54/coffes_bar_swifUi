@@ -26,11 +26,3 @@ struct CoffeesModel: Identifiable, Codable {
     case price
   }
 }
-
-struct CartOderModel: Identifiable {
-  let id: String
-  let urlPhoto: String
-  let quantity: Int
-  let price: String
-  let name: String
-}

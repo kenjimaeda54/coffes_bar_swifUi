@@ -8,5 +8,5 @@
 import Foundation
 
 class CartObservable: ObservableObject {
-  @Published var cartOrder = [CartOderModel]()
+  @Published var cartOrder = [OrdersModel]()
 }

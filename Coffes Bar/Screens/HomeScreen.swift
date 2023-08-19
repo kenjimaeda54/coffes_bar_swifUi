@@ -11,13 +11,14 @@ struct HomeScreen: View {
   @State private var searchMovie = ""
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
+  @State private var isSheetPresented = false
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
       let index = cart.cartOrder.firstIndex(where: { $0.id == itemSelected.id })
       cart.cartOrder.remove(at: index!)
     } else {
-      let order = CartOderModel(
+      let order = OrdersModel(
         id: itemSelected.id,
         urlPhoto: itemSelected.urlPhoto,
         quantity: 1,
@@ -44,13 +45,28 @@ struct HomeScreen: View {
                 .foregroundColor(ColorsApp.white)
             }
             Spacer()
-            AsyncImage(
-              url: URL(
+
+            Button {
+              isSheetPresented = true
+            } label: {
+              AsyncImage(url: URL(
                 string: "https://firebasestorage.googleapis.com/v0/b/uploadimagesapicoffee.appspot.com/o/avatar01.png?alt=media&token=4a3820fa-b757-4bcd-b148-1cd914956112"
-              ),
-              scale: 7
-            )
-            .aspectRatio(contentMode: .fit)
+              ), scale: 7) { phase in
+
+                if let image = phase.image {
+                  image
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .aspectRatio(contentMode: .fit)
+
+                } else {
+                  Image("profile-default")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .aspectRatio(contentMode: .fit)
+                }
+              }
+            }
           }
           .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
 
@@ -74,7 +90,7 @@ struct HomeScreen: View {
           .cornerRadius(18)
           .padding()
 
-          LazyVGrid(columns: gridItem) {
+          LazyVGrid(columns: gridItemCoffee) {
             ForEach(coffeesMock) { coffee in
               // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView
               NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
@@ -92,6 +108,17 @@ struct HomeScreen: View {
       .navigationBarBackButtonHidden(true)
       .onAppear {
         stateTabView.hiddeTabView = false
+      }
+      // sheet
+      // https://www.appcoda.com/swiftui-bottom-sheet-background/
+      .sheet(isPresented: $isSheetPresented) {
+        LazyVGrid(columns: gridItemAvatars, spacing: 15) {
+          ForEach(avatarsMock) { avatars in
+            RowAvatarImage(urlString: avatars.urlVatar)
+          }
+        }
+        .presentationDetents([.medium])
+        .presentationBackground(ColorsApp.brown)
       }
     }
   }

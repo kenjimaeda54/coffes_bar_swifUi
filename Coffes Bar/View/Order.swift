@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Order: View {
-  let order: CartOderModel
+  let order: OrdersModel
   let handlePlusQuantity: () -> Void
   let handleMinusQuantity: () -> Void
   let removal: (() -> Void)?
@@ -75,7 +75,7 @@ struct Order: View {
 
 struct Order_Previews: PreviewProvider {
   static var previews: some View {
-    Order(order: cartOderMock[0], handlePlusQuantity: {}, handleMinusQuantity: {}, removal: {})
+    Order(order: ordersMock[0], handlePlusQuantity: {}, handleMinusQuantity: {}, removal: {})
       .previewLayout(.sizeThatFits)
   }
 }

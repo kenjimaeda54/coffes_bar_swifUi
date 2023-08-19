@@ -11,6 +11,10 @@ import SwiftUI
 // MARK: - Layout
 
 let columnSpacing: CGFloat = 10
-var gridItem: [GridItem] {
+var gridItemCoffee: [GridItem] {
   return Array(repeating: GridItem(.flexible(), spacing: columnSpacing), count: 2)
+}
+
+var gridItemAvatars: [GridItem] {
+  return Array(repeating: GridItem(.flexible(), spacing: columnSpacing), count: 3)
 }

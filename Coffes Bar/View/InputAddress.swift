@@ -7,10 +7,6 @@
 import PartialSheet
 import SwiftUI
 
-enum FocusedField {
-  case firstInput
-}
-
 struct InputAddress: View {
   // exemplo como passar uma view pro Swiftui
   @Binding var isSheetPresented: Bool
@@ -33,11 +29,12 @@ struct InputAddress: View {
             .background(ColorsApp.white.opacity(0.5)),
           alignment: .bottom
         )
+
     })
     .sheet(isPresented: $isSheetPresented) {
       SheetTextField(
         valueTextField: $textField,
-        titleSheetPresented: textField.isEmpty ? labelText : textField
+        titleSheetPresented: textField.isEmpty ? labelText : textField, isSheetPresented: $isSheetPresented
       )
       .presentationDetents([.fraction(0.15)])
       .presentationDragIndicator(.hidden)

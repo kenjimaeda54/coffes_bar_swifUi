@@ -62,6 +62,7 @@
 		81F1D2EC2A8E942300BD801C /* OverviewPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2EB2A8E942300BD801C /* OverviewPayment.swift */; };
 		81F1D2EE2A8E97B300BD801C /* PurchaseMadeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2ED2A8E97B300BD801C /* PurchaseMadeScreen.swift */; };
 		81F1D2F02A8E99F300BD801C /* RowDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2EF2A8E99F300BD801C /* RowDescription.swift */; };
+		81FE05642A93DED80052AA7D /* ValidateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FE05632A93DED80052AA7D /* ValidateTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		81F1D2EB2A8E942300BD801C /* OverviewPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPayment.swift; sourceTree = "<group>"; };
 		81F1D2ED2A8E97B300BD801C /* PurchaseMadeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseMadeScreen.swift; sourceTree = "<group>"; };
 		81F1D2EF2A8E99F300BD801C /* RowDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDescription.swift; sourceTree = "<group>"; };
+		81FE05632A93DED80052AA7D /* ValidateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */,
 				81D96AA82A8AF9030027705C /* StateNavigationTabView.swift */,
 				810583C72A8F925E00DE5E32 /* StateNavigationStackView.swift */,
+				81FE05632A93DED80052AA7D /* ValidateTextField.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				81F1D2F02A8E99F300BD801C /* RowDescription.swift in Sources */,
 				8104BC122A910E2000B78D54 /* AvatarsModel.swift in Sources */,
 				813A8AA12A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift in Sources */,
+				81FE05642A93DED80052AA7D /* ValidateTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

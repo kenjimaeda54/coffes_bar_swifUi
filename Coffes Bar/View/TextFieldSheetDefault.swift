@@ -11,27 +11,12 @@ enum Field: Int, Hashable {
   case message
 }
 
-struct ValidateField {
-  let colorDefault: Color
-  let colorError: Color
-  let isValid: Bool
-  let feedBackCorrect: String
-  let feedBackWrong: String
-  init(colorDefault: Color, colorError: Color, isValid: Bool, feedBackCorrect: String, feedBackWrong: String) {
-    self.colorDefault = colorDefault
-    self.colorError = colorError
-    self.isValid = isValid
-    self.feedBackCorrect = feedBackCorrect
-    self.feedBackWrong = feedBackWrong
-  }
-}
-
 struct TextFieldSheetDefault: View {
   let placeHolderTextField: String
   @Binding var valueTextField: String
   @FocusState var focusedField: Field?
   @Binding var isSheetPresented: Bool
-  var fieldValidate: ValidateField?
+  var fieldValidate: ValidateTextField?
 
   var body: some View {
     VStack(spacing: 2) {
@@ -62,7 +47,7 @@ struct TextFieldSheetDefault: View {
         .submitLabel(.done)
 
       if fieldValidate != nil {
-        Text(fieldValidate!.isValid ? fieldValidate!.feedBackCorrect : fieldValidate!.feedBackWrong)
+        Text(fieldValidate!.feedBackWrong)
           .font(.custom(FontsApp.interLight, size: 16))
           .foregroundColor(fieldValidate!.isValid ? fieldValidate!.colorDefault : fieldValidate!.colorError)
           .padding(EdgeInsets(top: 5, leading: 0, bottom: 30, trailing: 0))

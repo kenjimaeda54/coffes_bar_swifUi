@@ -48,7 +48,7 @@ struct PurchaseMadeScreen: View {
       .safeAreaInset(
         edge: .bottom,
         content: {
-          CustomButtonPay(
+          CustomButtonDefault(
             handleButton: { handleBack() },
             width: .infinity,
             title: "Voltar usar app",

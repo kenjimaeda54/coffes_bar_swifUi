@@ -116,9 +116,9 @@ struct HomeScreen: View {
           ForEach(avatarsMock) { avatars in
             RowAvatarImage(urlString: avatars.urlVatar)
           }
+          .presentationDetents([.medium])
+          .presentationBackground(ColorsApp.brown)
         }
-        .presentationDetents([.medium])
-        .presentationBackground(ColorsApp.brown)
       }
     }
   }

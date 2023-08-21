@@ -8,7 +8,7 @@
 import Foundation
 
 struct FontsApp {
-  static let interBalck = "Inter-Black"
+  static let interBlack = "Inter-Black"
   static let interBold = "Inter-Bold"
   static let interExtraBold = "Inter-ExtraBold"
   static let interExtraLight = "Inter-ExtraLight"

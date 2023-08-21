@@ -39,39 +39,73 @@ struct FinishPaymentScreen: View {
     NavigationStack {
       VStack(alignment: .leading, spacing: 10) {
         HStack {
-          InputAddress(
+          ButtonTextFieldWithSheet(
             isSheetPresented: $isSheetPresentedStreet,
+            textField: street,
             labelText: returnTextIfValueFalse(
               conditional: locationManager.addressUser.street.isEmpty,
               value: locationManager.addressUser.street,
               optionalValue: "Nome da rua"
             )
-          )
-          InputAddress(
+          ) {
+            TextFieldSheetDefault(placeHolderTextField: returnTextIfValueFalse(
+              conditional: locationManager.addressUser.street.isEmpty,
+              value: locationManager.addressUser.street,
+              optionalValue: "Nome da rua"
+            ), valueTextField: $street, isSheetPresented: $isSheetPresentedStreet)
+          }
+          ButtonTextFieldWithSheet(
             isSheetPresented: $isSheetPresentedStreetNumber,
-            labelText: returnTextIfValueFalse(
+            textField: streetNumber, labelText: returnTextIfValueFalse(
               conditional: locationManager.addressUser.numberStreet.isEmpty,
               value: locationManager.addressUser.numberStreet,
               optionalValue: "Numero da rua"
             )
-          )
+          ) {
+            TextFieldSheetDefault(
+              placeHolderTextField: returnTextIfValueFalse(
+                conditional: locationManager.addressUser.numberStreet.isEmpty,
+                value: locationManager.addressUser.numberStreet,
+                optionalValue: "Numero da rua"
+              ),
+              valueTextField: $streetNumber,
+              isSheetPresented: $isSheetPresentedStreetNumber
+            )
+          }
         }
-        InputAddress(
+
+        ButtonTextFieldWithSheet(
           isSheetPresented: $isSheetPresentedDistrict,
-          labelText: returnTextIfValueFalse(
+          textField: district, labelText: returnTextIfValueFalse(
             conditional: locationManager.addressUser.district.isEmpty,
             value: locationManager.addressUser.district,
             optionalValue: "Coloque o nome do bairro"
           )
-        )
-        InputAddress(
+        ) {
+          TextFieldSheetDefault(
+            placeHolderTextField: returnTextIfValueFalse(
+              conditional: locationManager.addressUser.district.isEmpty,
+              value: locationManager.addressUser.district,
+              optionalValue: "Coloque o nome do bairro"
+            ),
+            valueTextField: $district,
+            isSheetPresented: $isSheetPresentedDistrict
+          )
+        }
+        ButtonTextFieldWithSheet(
           isSheetPresented: $isSheetPresentedCity,
-          labelText: returnTextIfValueFalse(
+          textField: city, labelText: returnTextIfValueFalse(
             conditional: locationManager.addressUser.city.isEmpty,
             value: locationManager.addressUser.city,
             optionalValue: "Coloque o nome da cidade"
           )
-        )
+        ) {
+          TextFieldSheetDefault(placeHolderTextField: returnTextIfValueFalse(
+            conditional: locationManager.addressUser.city.isEmpty,
+            value: locationManager.addressUser.city,
+            optionalValue: "Coloque o nome da cidade"
+          ), valueTextField: $city, isSheetPresented: $isSheetPresentedCity)
+        }
         Button {
           locationManager.requestLocationPermission()
         } label: {
@@ -102,7 +136,7 @@ struct FinishPaymentScreen: View {
       .safeAreaInset(edge: .bottom) {
         VStack(spacing: 15) {
           OverviewPayment(tax: tax, value: value)
-          CustomButtonPay(
+          CustomButtonDefault(
             handleButton: { stateStack.isActivePurchasePayment = true },
             width: .infinity,
             title: "Tudo certo",

@@ -72,19 +72,18 @@ struct Cart: View {
 
   var body: some View {
     GeometryReader { geometry in
+      NavigationStack {
+        if cart.cartOrder.isEmpty {
+          ZStack {
+            ColorsApp.black
+              .ignoresSafeArea(.all)
+            Text("Você não possui pedidos")
+              .font(.custom(FontsApp.interBold, size: 20))
+              .foregroundColor(ColorsApp.white)
+              .foregroundColor(ColorsApp.white)
+          }
 
-      if cart.cartOrder.isEmpty {
-        ZStack {
-          ColorsApp.black
-            .ignoresSafeArea(.all)
-          Text("Você não possui pedidos")
-            .font(.custom(FontsApp.interBold, size: 20))
-            .foregroundColor(ColorsApp.white)
-            .foregroundColor(ColorsApp.white)
-        }
-
-      } else {
-        NavigationStack {
+        } else {
           ScrollView(showsIndicators: false) {
             Text("Carrinho")
               .font(.custom(FontsApp.interBold, size: 20))
@@ -119,7 +118,7 @@ struct Cart: View {
 
             OverviewPayment(tax: tax, value: value)
 
-            CustomButtonPay(
+            CustomButtonDefault(
               handleButton: { stateStackView.isActiveFinishPayment = true },
               width: .infinity,
               title: "Finalizar compra",

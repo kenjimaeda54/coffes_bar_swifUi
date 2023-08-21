@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomButtonPay: View {
+struct CustomButtonDefault: View {
   let handleButton: () -> Void
   let width: CGFloat
   let title: String
@@ -36,7 +36,7 @@ struct CustomButtonPay: View {
 
 struct CustomButtonPay_Previews: PreviewProvider {
   static var previews: some View {
-    CustomButtonPay(
+    CustomButtonDefault(
       handleButton: {},
       width: .infinity,
       title: "Pagar agora",

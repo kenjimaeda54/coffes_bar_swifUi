@@ -74,7 +74,7 @@ struct DetailsScreen: View {
             .foregroundColor(ColorsApp.white)
         }
 
-        CustomButtonPay(
+        CustomButtonDefault(
           handleButton: handleAddProduct,
           width: .infinity,
           title: isAddedCart ? "Adicionado" : "Adicionar",

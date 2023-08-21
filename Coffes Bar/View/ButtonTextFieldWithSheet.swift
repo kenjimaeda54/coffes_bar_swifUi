@@ -7,11 +7,12 @@
 import PartialSheet
 import SwiftUI
 
-struct InputAddress: View {
+struct ButtonTextFieldWithSheet<Content: View>: View {
   // exemplo como passar uma view pro Swiftui
   @Binding var isSheetPresented: Bool
-  @State private var textField = ""
+  var textField: String
   let labelText: String
+  let viewSheet: () -> Content
 
   var body: some View {
     Button(action: {
@@ -32,18 +33,21 @@ struct InputAddress: View {
 
     })
     .sheet(isPresented: $isSheetPresented) {
-      SheetTextField(
-        valueTextField: $textField,
-        titleSheetPresented: textField.isEmpty ? labelText : textField, isSheetPresented: $isSheetPresented
-      )
-      .presentationDetents([.fraction(0.15)])
-      .presentationDragIndicator(.hidden)
+      viewSheet()
+        .presentationDetents([.fraction(0.15)])
+        .presentationDragIndicator(.hidden)
+        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
     }
   }
 }
 
 struct InputAddress_Previews: PreviewProvider {
   static var previews: some View {
-    InputAddress(isSheetPresented: .constant(false), labelText: "Coloque nome da arua")
+    ButtonTextFieldWithSheet(
+      isSheetPresented: .constant(false),
+      textField: "Coloque nome da rua", labelText: "Coloque nome da arua", viewSheet: {
+        Text("View builder")
+      }
+    )
   }
 }

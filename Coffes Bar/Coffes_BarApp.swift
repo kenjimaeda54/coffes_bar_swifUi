@@ -18,7 +18,7 @@ struct Coffes_BarApp: App {
       inMemoryStore: URLImageInMemoryStore()
     )
     return WindowGroup {
-      LoginScreen()
+      MainView()
         .environment(\.urlImageService, urlImageService)
     }
   }

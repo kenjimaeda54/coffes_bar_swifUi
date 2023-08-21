@@ -11,6 +11,7 @@ struct HomeScreen: View {
   @State private var searchMovie = ""
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
+  @EnvironmentObject private var stateStack: StateNavigationStack
   @State private var isSheetPresented = false
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
@@ -108,6 +109,8 @@ struct HomeScreen: View {
       .navigationBarBackButtonHidden(true)
       .onAppear {
         stateTabView.hiddeTabView = false
+        stateStack.sigin = false
+        stateStack.login = false
       }
       // sheet
       // https://www.appcoda.com/swiftui-bottom-sheet-background/

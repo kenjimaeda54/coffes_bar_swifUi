@@ -13,7 +13,7 @@ struct FinishPaymentScreen: View {
   @ObservedObject var cart: CartObservable
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject private var stateTabView: StateNavigationTabView
-  @EnvironmentObject private var stateStack: StateNavigationStackView
+  @EnvironmentObject private var stateStack: StateNavigationStack
   @State private var isSheetPresentedStreet = false
   @State private var isSheetPresentedDistrict = false
   @State private var isSheetPresentedStreetNumber = false
@@ -180,6 +180,6 @@ struct FinishedPaymentScreen_Previews: PreviewProvider {
   static var previews: some View {
     FinishPaymentScreen(cart: CartObservable(), tax: 3.20, value: 12.0)
       .environmentObject(StateNavigationTabView())
-      .environmentObject(StateNavigationStackView())
+      .environmentObject(StateNavigationStack())
   }
 }

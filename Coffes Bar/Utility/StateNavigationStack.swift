@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-class StateNavigationStackView: ObservableObject {
+class StateNavigationStack: ObservableObject {
   @Published var isActiveFinishPayment = false
   @Published var isActivePurchasePayment = false
+  @Published var login = false
+  @Published var sigin = false
 }

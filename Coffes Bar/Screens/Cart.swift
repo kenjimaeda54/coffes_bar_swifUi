@@ -14,9 +14,9 @@ struct Cart: View {
   @State private var offsetAnimated: CGFloat = 0.0
   @State private var goWhenTrue = false
   @Environment(\.dismiss) var dimiss
-  @EnvironmentObject private var stateTabView: StateNavigationTabView
+  @EnvironmentObject var stateTabView: StateNavigationTabView
   // criei um objeto que vai ser compartilhado com todas as stack pra poder conseguir eliminar todas de uma vez
-  @StateObject private var stateStackView = StateNavigationStackView()
+  @StateObject var stateStackView = StateNavigationStack()
 
   func conveterStringCurrencyInDouble(_ value: String) -> Double {
     // replace string https://www.tutorialspoint.com/swift-program-to-replace-a-character-at-a-specific-index#:~:text=Method%203%3A%20Using%20the%20replacingCharacters,by%20the%20given%20replacement%20character.
@@ -71,8 +71,8 @@ struct Cart: View {
   }
 
   var body: some View {
-    GeometryReader { geometry in
-      NavigationStack {
+    NavigationStack {
+      GeometryReader { geometry in
         if cart.cartOrder.isEmpty {
           ZStack {
             ColorsApp.black
@@ -142,10 +142,10 @@ struct Cart: View {
             value = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
             stateTabView.hiddeTabView = false
           }
+          .environmentObject(stateStackView)
         }
       }
     }
-    .environmentObject(stateStackView)
   }
 }
 
@@ -153,5 +153,6 @@ struct Cart_Previews: PreviewProvider {
   static var previews: some View {
     Cart(cart: CartObservable())
       .environmentObject(StateNavigationTabView())
+      .environmentObject(StateNavigationStack())
   }
 }

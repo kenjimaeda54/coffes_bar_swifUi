@@ -10,7 +10,7 @@ import SwiftUI
 struct PurchaseMadeScreen: View {
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
-  @EnvironmentObject private var stateStackView: StateNavigationStackView
+  @EnvironmentObject private var stateStackView: StateNavigationStack
   @State private var goWhenTrue = false
   @Environment(\.dismiss) var dismiss
 
@@ -44,7 +44,6 @@ struct PurchaseMadeScreen: View {
         stateTabView.hiddeTabView = true
         goWhenTrue = false
       }
-
       .safeAreaInset(
         edge: .bottom,
         content: {
@@ -78,6 +77,6 @@ struct PurchaseMadeScreen_Previews: PreviewProvider {
       valueTotal: 35.00
     )
     .environmentObject(StateNavigationTabView())
-    .environmentObject(StateNavigationStackView())
+    .environmentObject(StateNavigationStack())
   }
 }

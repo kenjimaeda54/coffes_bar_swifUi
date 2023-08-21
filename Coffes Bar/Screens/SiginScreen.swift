@@ -1,20 +1,19 @@
 //
-//  LoginScreen.swift
+//  SiginScreen.swift
 //  Coffes Bar
 //
-//  Created by kenjimaeda on 19/08/23.
+//  Created by kenjimaeda on 21/08/23.
 //
 
 import SwiftUI
 
-struct LoginScreen: View {
+struct SiginScreen: View {
   @State private var isSheetPresentedEmail = false
   @State private var isSheetPresentedPassword = false
   @State private var nameIcon = "eye.slash.fill"
-  @StateObject private var stateStack = StateNavigationStack()
-  @State private var presentedMainView = false
   @State private var email = ""
   @State private var password = ""
+  @State private var isSheetPresented = false
   var passwordSecurity: String {
     var caracter = ""
     let arrayPassword = Array(repeating: "•", count: password.count)
@@ -45,10 +44,6 @@ struct LoginScreen: View {
     }
   }
 
-  func handleDestinationSigin() {
-    stateStack.sigin = true
-  }
-
   var body: some View {
     NavigationStack {
       VStack(spacing: 0) {
@@ -60,6 +55,29 @@ struct LoginScreen: View {
             .font(.custom(FontsApp.pacificoRegular, size: 35))
             .foregroundColor(ColorsApp.white)
         }
+
+        Button {
+          isSheetPresented = true
+        } label: {
+          AsyncImage(url: URL(
+            string: "https://firebasestorage.googleapis.com/v0/b/uploadimagesapicoffee.appspot.com/o/avatar01.png?alt=media&token=4a3820fa-b757-4bcd-b148-1cd914956112"
+          ), scale: 7) { phase in
+
+            if let image = phase.image {
+              image
+                .resizable()
+                .frame(width: 80, height: 80)
+                .aspectRatio(contentMode: .fit)
+
+            } else {
+              Image("profile-default")
+                .resizable()
+                .frame(width: 80, height: 80)
+                .aspectRatio(contentMode: .fit)
+            }
+          }
+        }
+        .padding(EdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0))
 
         ButtonTextFieldWithSheet(
           isSheetPresented: $isSheetPresentedEmail,
@@ -109,45 +127,29 @@ struct LoginScreen: View {
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
+      .safeAreaInset(edge: .bottom, content: {
+        CustomButtonDefault(handleButton: {}, width: .infinity, title: "Registrar", color: nil, textColor: nil)
+          .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
+
+      })
       .background(
         ColorsApp.black
       )
-      .safeAreaInset(edge: .bottom, content: {
-        VStack {
-          CustomButtonDefault(
-            handleButton: { presentedMainView = true },
-            width: .infinity,
-            title: "Seguir",
-            color: nil,
-            textColor: nil
-          )
-          Button(action: handleDestinationSigin) {
-            Text("Se não possui cadastro clica aqui")
-              .font(.custom(FontsApp.interThin, size: 17))
-              .foregroundColor(ColorsApp.white)
+      .sheet(isPresented: $isSheetPresented) {
+        LazyVGrid(columns: gridItemAvatars, spacing: 15) {
+          ForEach(avatarsMock) { avatars in
+            RowAvatarImage(urlString: avatars.urlVatar)
           }
-          .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+          .presentationDetents([.medium])
+          .presentationBackground(ColorsApp.brown)
         }
-        .padding(EdgeInsets(top: 20, leading: 40, bottom: 0, trailing: 20))
-      })
-      .onAppear {
-        stateStack.sigin = false
-        presentedMainView = false
-      }
-      .navigationDestination(isPresented: $stateStack.sigin) {
-        SiginScreen()
-          .navigationBarBackButtonHidden(true)
-      }
-      .navigationDestination(isPresented: $presentedMainView) {
-        MainView()
-          .navigationBarBackButtonHidden(true)
       }
     }
   }
 }
 
-struct LoginScreen_Previews: PreviewProvider {
+struct SiginScreen_Previews: PreviewProvider {
   static var previews: some View {
-    LoginScreen()
+    SiginScreen()
   }
 }

@@ -109,8 +109,6 @@ struct HomeScreen: View {
       .navigationBarBackButtonHidden(true)
       .onAppear {
         stateTabView.hiddeTabView = false
-        stateStack.sigin = false
-        stateStack.login = false
       }
       // sheet
       // https://www.appcoda.com/swiftui-bottom-sheet-background/

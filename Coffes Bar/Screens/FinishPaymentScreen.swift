@@ -117,7 +117,6 @@ struct FinishPaymentScreen: View {
       }
       .onAppear {
         stateTabView.hiddeTabView = true
-        stateStack.isActivePurchasePayment = false
       }
       .navigationBarBackButtonHidden(true)
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))

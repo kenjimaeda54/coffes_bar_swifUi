@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+//
+
 struct PurchaseMadeScreen: View {
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @EnvironmentObject private var stateStackView: StateNavigationStack
-  @State private var goWhenTrue = false
   @Environment(\.dismiss) var dismiss
 
   let city: String
@@ -21,11 +22,8 @@ struct PurchaseMadeScreen: View {
   let valueTotal: Double
 
   func handleBack() {
-    stateStackView.isActiveFinishPayment = false
-    stateStackView.isActivePurchasePayment = false
     stateTabView.tagSelected = 0
     cart.cartOrder = []
-    dismiss()
   }
 
   var body: some View {
@@ -42,7 +40,12 @@ struct PurchaseMadeScreen: View {
       }
       .onAppear {
         stateTabView.hiddeTabView = true
-        goWhenTrue = false
+      }
+      .onDisappear {
+        dismiss()
+        stateStackView.isActiveFinishPayment = false
+        stateStackView.isActivePurchasePayment = false
+        stateTabView.hiddeTabView = false
       }
       .safeAreaInset(
         edge: .bottom,

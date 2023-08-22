@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// https://www.youtube.com/watch?v=6sySblPWwBc
 class StateNavigationStack: ObservableObject {
   @Published var isActiveFinishPayment = false
   @Published var isActivePurchasePayment = false

@@ -11,7 +11,6 @@ import SwiftUI
 struct MainView: View {
   @ObservedObject var cartOders = CartObservable()
   @StateObject var stateTabView = StateNavigationTabView()
-  @StateObject var stateStackView = StateNavigationStack()
 
   var body: some View {
     // maneira de navegar via codigo entre as tabs
@@ -63,7 +62,6 @@ struct MainView: View {
       )
     }
     .environmentObject(stateTabView)
-    .environmentObject(stateStackView)
   }
 }
 

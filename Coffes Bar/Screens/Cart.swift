@@ -71,8 +71,8 @@ struct Cart: View {
   }
 
   var body: some View {
-    NavigationStack {
-      GeometryReader { geometry in
+    GeometryReader { geometry in
+      NavigationStack {
         if cart.cartOrder.isEmpty {
           ZStack {
             ColorsApp.black
@@ -132,9 +132,6 @@ struct Cart: View {
               FinishPaymentScreen(cart: cart, tax: tax, value: value)
             }
           }
-          .onAppear {
-            stateStackView.isActiveFinishPayment = false
-          }
           .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
           .frame(width: .infinity)
           .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
@@ -142,9 +139,9 @@ struct Cart: View {
             value = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
             stateTabView.hiddeTabView = false
           }
-          .environmentObject(stateStackView)
         }
       }
+      .environmentObject(stateStackView)
     }
   }
 }
@@ -153,6 +150,5 @@ struct Cart_Previews: PreviewProvider {
   static var previews: some View {
     Cart(cart: CartObservable())
       .environmentObject(StateNavigationTabView())
-      .environmentObject(StateNavigationStack())
   }
 }

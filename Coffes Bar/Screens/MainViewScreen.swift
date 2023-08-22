@@ -8,7 +8,7 @@
 import PartialSheet
 import SwiftUI
 
-struct MainView: View {
+struct MainViewScreen: View {
   @ObservedObject var cartOders = CartObservable()
   @StateObject var stateTabView = StateNavigationTabView()
 
@@ -67,6 +67,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainView()
+    MainViewScreen()
+      .environmentObject(StateNavigationTabView())
   }
 }

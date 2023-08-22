@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "MainView"
+            landmarkName = "MainViewScreen"
             landmarkType = "14">
             <Locations>
                <Location
@@ -191,17 +191,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BA59C1CA-24F1-4AC8-A6E3-A5B2CC88E6A9"
-            shouldBeEnabled = "No"
+            uuid = "F6DBA93D-E25C-42E3-A817-59996949BA12"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/LoginScreen.swift"
+            filePath = "Coffes Bar/Screens/RootViewScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "28"
+            endingLineNumber = "28">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

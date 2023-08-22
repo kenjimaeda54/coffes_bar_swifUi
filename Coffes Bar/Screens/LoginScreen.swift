@@ -11,8 +11,8 @@ struct LoginScreen: View {
   @State private var isSheetPresentedEmail = false
   @State private var isSheetPresentedPassword = false
   @State private var nameIcon = "eye.slash.fill"
-  @StateObject private var stateStack = StateNavigationStack()
-  @State private var presentedMainView = false
+  @State private var isPresentedSigin = false
+  @Binding var isLoged: Bool
   @State private var email = ""
   @State private var password = ""
   var passwordSecurity: String {
@@ -43,10 +43,6 @@ struct LoginScreen: View {
     } catch {
       return false
     }
-  }
-
-  func handleDestinationSigin() {
-    stateStack.sigin = true
   }
 
   var body: some View {
@@ -115,13 +111,13 @@ struct LoginScreen: View {
       .safeAreaInset(edge: .bottom, content: {
         VStack {
           CustomButtonDefault(
-            handleButton: { presentedMainView = true },
+            handleButton: { isLoged = true },
             width: .infinity,
             title: "Seguir",
             color: nil,
             textColor: nil
           )
-          Button(action: handleDestinationSigin) {
+          Button(action: { isPresentedSigin = true }) {
             Text("Se não possui cadastro clica aqui")
               .font(.custom(FontsApp.interThin, size: 17))
               .foregroundColor(ColorsApp.white)
@@ -130,16 +126,8 @@ struct LoginScreen: View {
         }
         .padding(EdgeInsets(top: 20, leading: 40, bottom: 0, trailing: 20))
       })
-      .onAppear {
-        stateStack.sigin = false
-        presentedMainView = false
-      }
-      .navigationDestination(isPresented: $stateStack.sigin) {
-        SiginScreen()
-          .navigationBarBackButtonHidden(true)
-      }
-      .navigationDestination(isPresented: $presentedMainView) {
-        MainView()
+      .navigationDestination(isPresented: $isPresentedSigin) {
+        SiginScreen(isLoged: $isLoged)
           .navigationBarBackButtonHidden(true)
       }
     }
@@ -148,6 +136,6 @@ struct LoginScreen: View {
 
 struct LoginScreen_Previews: PreviewProvider {
   static var previews: some View {
-    LoginScreen()
+    LoginScreen(isLoged: .constant(false))
   }
 }

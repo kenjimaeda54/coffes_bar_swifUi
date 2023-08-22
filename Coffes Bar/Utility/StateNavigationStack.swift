@@ -12,6 +12,6 @@ import SwiftUI
 class StateNavigationStack: ObservableObject {
   @Published var isActiveFinishPayment = false
   @Published var isActivePurchasePayment = false
-  @Published var login = false
-  @Published var sigin = false
+  @Published var isLogin = false
+  @Published var isSigin = false
 }

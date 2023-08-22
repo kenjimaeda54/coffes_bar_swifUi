@@ -13,7 +13,9 @@ struct SiginScreen: View {
   @State private var nameIcon = "eye.slash.fill"
   @State private var email = ""
   @State private var password = ""
+  @Binding var isLoged: Bool
   @State private var isSheetPresented = false
+  @Environment(\.dismiss) private var dismiss
   var passwordSecurity: String {
     var caracter = ""
     let arrayPassword = Array(repeating: "•", count: password.count)
@@ -42,6 +44,10 @@ struct SiginScreen: View {
     } catch {
       return false
     }
+  }
+
+  func handleBack() {
+    dismiss()
   }
 
   var body: some View {
@@ -128,8 +134,14 @@ struct SiginScreen: View {
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
       .safeAreaInset(edge: .bottom, content: {
-        CustomButtonDefault(handleButton: {}, width: .infinity, title: "Registrar", color: nil, textColor: nil)
-          .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
+        CustomButtonDefault(
+          handleButton: { isLoged = true },
+          width: .infinity,
+          title: "Registrar",
+          color: nil,
+          textColor: nil
+        )
+        .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
 
       })
       .background(
@@ -144,12 +156,22 @@ struct SiginScreen: View {
           .presentationBackground(ColorsApp.brown)
         }
       }
+      .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Button(action: handleBack) {
+            Image(systemName: "chevron.left")
+              .foregroundColor(
+                ColorsApp.white
+              )
+          }
+        }
+      }
     }
   }
 }
 
 struct SiginScreen_Previews: PreviewProvider {
   static var previews: some View {
-    SiginScreen()
+    SiginScreen(isLoged: .constant(false))
   }
 }

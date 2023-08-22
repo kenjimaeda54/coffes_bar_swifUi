@@ -15,8 +15,8 @@ struct Cart: View {
   @State private var goWhenTrue = false
   @Environment(\.dismiss) var dimiss
   @EnvironmentObject var stateTabView: StateNavigationTabView
-  // criei um objeto que vai ser compartilhado com todas as stack pra poder conseguir eliminar todas de uma vez
   @StateObject var stateStackView = StateNavigationStack()
+  // criei um objeto que vai ser compartilhado com todas as stack pra poder conseguir eliminar todas de uma vez
 
   func conveterStringCurrencyInDouble(_ value: String) -> Double {
     // replace string https://www.tutorialspoint.com/swift-program-to-replace-a-character-at-a-specific-index#:~:text=Method%203%3A%20Using%20the%20replacingCharacters,by%20the%20given%20replacement%20character.

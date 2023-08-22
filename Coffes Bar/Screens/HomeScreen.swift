@@ -11,7 +11,6 @@ struct HomeScreen: View {
   @State private var searchMovie = ""
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
-  @EnvironmentObject private var stateStack: StateNavigationStack
   @State private var isSheetPresented = false
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {

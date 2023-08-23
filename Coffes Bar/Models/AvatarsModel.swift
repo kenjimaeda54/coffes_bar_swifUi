@@ -9,10 +9,10 @@ import Foundation
 
 struct AvatarsModel: Identifiable, Codable {
   let id: String
-  let urlVatar: String
+  let urlAvatar: String
 
   private enum CodingKeys: String, CodingKey {
     case id = "_id"
-    case urlVatar
+    case urlAvatar
   }
 }

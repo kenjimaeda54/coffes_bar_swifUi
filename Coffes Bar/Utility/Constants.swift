@@ -18,3 +18,7 @@ var gridItemCoffee: [GridItem] {
 var gridItemAvatars: [GridItem] {
   return Array(repeating: GridItem(.flexible(), spacing: columnSpacing), count: 3)
 }
+
+// MARK: - URL
+
+let baseUrl = "http://localhost:3000"

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StoreHome: ObservableObject {
+class StoreCoffess: ObservableObject {
   @Published var loading = LoadingState.loading
   @Published var coffees: [CoffeesModel] = []
 

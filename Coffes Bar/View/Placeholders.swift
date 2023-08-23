@@ -19,12 +19,6 @@ struct PlaceholderAvatar: View {
   }
 }
 
-struct Placeholders_Previews: PreviewProvider {
-  static var previews: some View {
-    PlaceholderAvatar()
-  }
-}
-
 struct PlaceholderListCoffe: View {
   @ObservedObject var cart: CartObservable
 
@@ -39,5 +33,21 @@ struct PlaceholderListCoffe: View {
     }
     .redactShimmer(condition: true)
     .foregroundColor(ColorsApp.white)
+  }
+}
+
+struct PlaceholderGridAvatars: View {
+  var body: some View {
+    LazyVGrid(columns: gridItemAvatars, spacing: 15) {
+      ForEach(avatarsMock) { avatars in
+        Button(action: {}) {
+          RowAvatarImage(urlString: avatars.urlAvatar)
+        }
+      }
+      .presentationDetents([.medium])
+      .presentationBackground(ColorsApp.brown)
+      .redactShimmer(condition: true)
+      .foregroundColor(ColorsApp.gray)
+    }
   }
 }

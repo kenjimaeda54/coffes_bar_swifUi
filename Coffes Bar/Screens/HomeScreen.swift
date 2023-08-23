@@ -12,7 +12,7 @@ struct HomeScreen: View {
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @State private var isSheetPresented = false
-  @StateObject private var store = StoreHome()
+  @StateObject private var store = StoreCoffess()
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
@@ -106,9 +106,7 @@ struct HomeScreen: View {
             }
 
           case .failure:
-            Text("Não foi possivel carregar os dados")
-              .font(.custom(FontsApp.interRegular, size: 18))
-              .foregroundColor(ColorsApp.white)
+            TextError()
 
           default:
             PlaceholderListCoffe(cart: cart)
@@ -128,7 +126,7 @@ struct HomeScreen: View {
       .sheet(isPresented: $isSheetPresented) {
         LazyVGrid(columns: gridItemAvatars, spacing: 15) {
           ForEach(avatarsMock) { avatars in
-            RowAvatarImage(urlString: avatars.urlVatar)
+            RowAvatarImage(urlString: avatars.urlAvatar)
           }
           .presentationDetents([.medium])
           .presentationBackground(ColorsApp.brown)

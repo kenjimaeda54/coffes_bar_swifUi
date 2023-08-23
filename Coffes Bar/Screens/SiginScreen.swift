@@ -11,11 +11,18 @@ struct SiginScreen: View {
   @State private var isSheetPresentedEmail = false
   @State private var isSheetPresentedPassword = false
   @State private var nameIcon = "eye.slash.fill"
+  @State private var isSnackBarPresentedError = false
   @State private var email = ""
   @State private var password = ""
+  @State private var avatarSelected: AvatarsModel = .init(
+    id: "64d189bba57ef7a8ec728dcf",
+    urlAvatar: "https://firebasestorage.googleapis.com/v0/b/uploadimagesapicoffee.appspot.com/o/avatar01.png?alt=media&token=4a3820fa-b757-4bcd-b148-1cd914956112"
+  )
   @State private var isShimmering = false
   @Binding var isLoged: Bool
   @State private var isSheetPresented = false
+  @StateObject private var storeAvatar = StoreAvatar()
+  @StateObject private var storeUser = StoreUsers()
   @Environment(\.dismiss) private var dismiss
   var passwordSecurity: String {
     var caracter = ""
@@ -51,6 +58,30 @@ struct SiginScreen: View {
     dismiss()
   }
 
+  func handleRegisterUser() {
+    let params = [
+      "name": "",
+      "email": email,
+      "password": password,
+      "avatarId": avatarSelected.id
+    ]
+
+    storeUser.creatUsers(params: params)
+
+    if storeUser.loading == .sucess {
+      print(storeUser.user)
+    }
+
+    if storeUser.loading == .failure {
+      isSnackBarPresentedError = true
+    }
+  }
+
+  func handleSelectAvatar(_ avatar: AvatarsModel) {
+    avatarSelected = avatar
+    isSheetPresented = false
+  }
+
   var body: some View {
     NavigationStack {
       VStack(spacing: 0) {
@@ -67,7 +98,7 @@ struct SiginScreen: View {
           isSheetPresented = true
         } label: {
           AsyncImage(url: URL(
-            string: "https://firebasestorage.googleapis.com/v0/b/uploadimagesapicoffee.appspot.com/o/avatar01.png?alt=media&token=4a3820fa-b757-4bcd-b148-1cd914956112"
+            string: avatarSelected.urlAvatar
           ), scale: 7) { phase in
 
             if let image = phase.image {
@@ -76,6 +107,8 @@ struct SiginScreen: View {
                 .frame(width: 80, height: 80)
                 .aspectRatio(contentMode: .fit)
 
+            } else if phase.error != nil {
+              TextError()
             } else {
               PlaceholderAvatar()
             }
@@ -128,13 +161,15 @@ struct SiginScreen: View {
           )
         }
       }
-
+      .onAppear {
+        storeAvatar.fetchAvatar()
+      }
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
       .safeAreaInset(edge: .bottom, content: {
         CustomButtonDefault(
-          handleButton: { isLoged = true },
+          handleButton: handleRegisterUser,
           width: .infinity,
           title: "Registrar",
           color: nil,
@@ -147,12 +182,25 @@ struct SiginScreen: View {
         ColorsApp.black
       )
       .sheet(isPresented: $isSheetPresented) {
-        LazyVGrid(columns: gridItemAvatars, spacing: 15) {
-          ForEach(avatarsMock) { avatars in
-            RowAvatarImage(urlString: avatars.urlVatar)
+        switch storeAvatar.loading {
+        case .sucess:
+          LazyVGrid(columns: gridItemAvatars, spacing: 15) {
+            ForEach(storeAvatar.avatar) { avatar in
+              Button {
+                handleSelectAvatar(avatar)
+              } label: {
+                RowAvatarImage(urlString: avatar.urlAvatar)
+              }
+            }
+            .presentationDetents([.medium])
+            .presentationBackground(ColorsApp.brown)
           }
-          .presentationDetents([.medium])
-          .presentationBackground(ColorsApp.brown)
+
+        case .failure:
+          TextError()
+
+        default:
+          PlaceholderGridAvatars()
         }
       }
       .toolbar {
@@ -165,6 +213,8 @@ struct SiginScreen: View {
           }
         }
       }
+       
+      
     }
   }
 }

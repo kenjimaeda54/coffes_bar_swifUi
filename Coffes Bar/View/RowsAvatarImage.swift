@@ -15,18 +15,25 @@ struct RowAvatarImage: View {
         image
           .resizable()
           .frame(width: 80, height: 80)
+          .clipShape(Circle())
           .aspectRatio(contentMode: .fit)
+
+      } else if phase.error != nil {
+        Text("Erro ao carregar as imagens")
       } else {
         Image("profile-default")
           .resizable()
           .frame(width: 80, height: 80)
           .aspectRatio(contentMode: .fit)
+          .clipShape(Circle())
+          .redactShimmer(condition: true)
+          .foregroundColor(ColorsApp.gray)
       }
     }
   }
 }
 
-struct RowsCoffeeBar_Previews: PreviewProvider {
+struct RowsAvatarImage_Previews: PreviewProvider {
   static var previews: some View {
     RowAvatarImage(urlString: "https://github.com/kenjimaeda.png")
   }

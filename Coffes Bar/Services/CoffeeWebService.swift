@@ -9,7 +9,7 @@ import Foundation
 
 class CoffeeWebService {
   func fetchAllCoffes(completion: @escaping (Result<[CoffeesModel], NetworkError>) -> Void) {
-    guard let url = URL(string: "http://localhost:3000/coffees") else {
+    guard let url = URL(string: "\(baseUrl)/coffees") else {
       return completion(.failure(.badUrl))
     }
 

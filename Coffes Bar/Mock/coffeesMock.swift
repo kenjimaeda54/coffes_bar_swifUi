@@ -10,8 +10,8 @@ import Foundation
 let coffeesMock: [CoffeesModel] = [
   CoffeesModel(
     id: "64d0d735d545e3b60f6be839",
-    urlPhoto: "https://cdn.abrahao.com.br/base/f4d/0e2/e7f/pingado.jpg",
-    name: "Pingado",
+    urlPhoto: "https://cdn.abrahao.com.br/base/246/a3c/554/cold-brew.jpg",
+    name: "Café gelado ou iced coffee",
     description: "pingado, nosso famoso café com leite, é o protagonista das mesas brasileiras e leva esse nome porque, figurativamente, um pingado de leite passa a ser acrescido sobre o café para que o seu preparo saia perfeito, mas, na prática, não é a proporção dos ingredientes que o define.",
     quantityMl: ["50ml", "100ml", "200ml"],
     price: "R$ 6,00"
@@ -38,7 +38,7 @@ let coffeesMock: [CoffeesModel] = [
   CoffeesModel(
     id: "64d0d8404efdc5abe2835",
     urlPhoto: "https://cdn.abrahao.com.br/base/941/30e/a17/espresso-panna.jpg",
-    name: "Espresso panna ou espresso italiano",
+    name: "Espresso panna ou espresso italiano Latte",
     description: "Ainda respirando ares europeus, mais especificamente, italianos, o espresso panna entra na lista de primos do cappuccino e do café com leite. Ele nada mais é, como o nome já diz, do que uma mistura incrível de café espresso + panna – creme de leite fresco batido na hora, creminho com  chantilly",
     quantityMl: ["50ml", "100ml", "200ml"],
     price: "R$ 17,50"

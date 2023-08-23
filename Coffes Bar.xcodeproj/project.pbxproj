@@ -26,6 +26,11 @@
 		810C27462A85B2F400038409 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C27452A85B2F400038409 /* Cart.swift */; };
 		810C27482A85B30B00038409 /* FavoriteOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810C27472A85B30B00038409 /* FavoriteOrders.swift */; };
 		811CFF732A94E9A000BD07CF /* RootViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF722A94E9A000BD07CF /* RootViewScreen.swift */; };
+		811CFF752A95365500BD07CF /* RedactShimmerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF742A95365500BD07CF /* RedactShimmerViewModifier.swift */; };
+		811CFF772A95367C00BD07CF /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF762A95367C00BD07CF /* Shimmer.swift */; };
+		811CFF7A2A95867400BD07CF /* CoffeeWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF792A95867400BD07CF /* CoffeeWebService.swift */; };
+		811CFF7C2A95869400BD07CF /* NetWorkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF7B2A95869400BD07CF /* NetWorkError.swift */; };
+		811CFF7E2A958EC700BD07CF /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CFF7D2A958EC700BD07CF /* Placeholders.swift */; };
 		8120C0812A8456D60086BD41 /* Coffes_BarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120C0802A8456D60086BD41 /* Coffes_BarApp.swift */; };
 		8120C0832A8456D60086BD41 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120C0822A8456D60086BD41 /* HomeScreen.swift */; };
 		8120C0852A8456D70086BD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8120C0842A8456D70086BD41 /* Assets.xcassets */; };
@@ -59,6 +64,7 @@
 		81D3B5532A86AECD00B1FBF1 /* CartObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */; };
 		81D3B5552A87023000B1FBF1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5542A87023000B1FBF1 /* Order.swift */; };
 		81D3B5572A8702B000B1FBF1 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D3B5562A8702B000B1FBF1 /* orders.swift */; };
+		81D55EDF2A96173A0098D4DA /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D55EDE2A96173A0098D4DA /* LoadingState.swift */; };
 		81D96AA92A8AF9030027705C /* StateNavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D96AA82A8AF9030027705C /* StateNavigationTabView.swift */; };
 		81F1D2EC2A8E942300BD801C /* OverviewPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2EB2A8E942300BD801C /* OverviewPayment.swift */; };
 		81F1D2EE2A8E97B300BD801C /* PurchaseMadeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2ED2A8E97B300BD801C /* PurchaseMadeScreen.swift */; };
@@ -87,6 +93,11 @@
 		810C27452A85B2F400038409 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		810C27472A85B30B00038409 /* FavoriteOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrders.swift; sourceTree = "<group>"; };
 		811CFF722A94E9A000BD07CF /* RootViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewScreen.swift; sourceTree = "<group>"; };
+		811CFF742A95365500BD07CF /* RedactShimmerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactShimmerViewModifier.swift; sourceTree = "<group>"; };
+		811CFF762A95367C00BD07CF /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
+		811CFF792A95867400BD07CF /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
+		811CFF7B2A95869400BD07CF /* NetWorkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkError.swift; sourceTree = "<group>"; };
+		811CFF7D2A958EC700BD07CF /* Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Placeholders.swift; path = "Coffes Bar/View/Placeholders.swift"; sourceTree = SOURCE_ROOT; };
 		8120C07D2A8456D60086BD41 /* Coffes Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffes Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8120C0802A8456D60086BD41 /* Coffes_BarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffes_BarApp.swift; sourceTree = "<group>"; };
 		8120C0822A8456D60086BD41 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -120,6 +131,7 @@
 		81D3B5522A86AECD00B1FBF1 /* CartObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartObservable.swift; sourceTree = "<group>"; };
 		81D3B5542A87023000B1FBF1 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		81D3B5562A8702B000B1FBF1 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
+		81D55EDE2A96173A0098D4DA /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		81D96AA82A8AF9030027705C /* StateNavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateNavigationTabView.swift; sourceTree = "<group>"; };
 		81F1D2EB2A8E942300BD801C /* OverviewPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPayment.swift; sourceTree = "<group>"; };
 		81F1D2ED2A8E97B300BD801C /* PurchaseMadeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseMadeScreen.swift; sourceTree = "<group>"; };
@@ -187,6 +199,7 @@
 				8104BC152A9117D100B78D54 /* RowsCoffeeBar.swift */,
 				81B0C6FB2A9242D00020B2ED /* TextFieldSheetDefault.swift */,
 				81B0C6FD2A9247600020B2ED /* TextFieldSecurySheetWithIcon.swift */,
+				811CFF7D2A958EC700BD07CF /* Placeholders.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +212,8 @@
 				81D96AA82A8AF9030027705C /* StateNavigationTabView.swift */,
 				810583C72A8F925E00DE5E32 /* StateNavigationStack.swift */,
 				81FE05632A93DED80052AA7D /* ValidateTextField.swift */,
+				811CFF7B2A95869400BD07CF /* NetWorkError.swift */,
+				81D55EDE2A96173A0098D4DA /* LoadingState.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -210,6 +225,14 @@
 				819731142A8CF274003A040E /* StoreLocation.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		811CFF782A95863500BD07CF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				811CFF792A95867400BD07CF /* CoffeeWebService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8120C0742A8456D60086BD41 = {
@@ -231,6 +254,7 @@
 		8120C07F2A8456D60086BD41 /* Coffes Bar */ = {
 			isa = PBXGroup;
 			children = (
+				811CFF782A95863500BD07CF /* Services */,
 				8104BC0C2A90D86C00B78D54 /* Extensions */,
 				81554BED2A8A58BB00AAD038 /* Modifiers */,
 				810C273E2A85A35100038409 /* Store */,
@@ -280,6 +304,8 @@
 			children = (
 				81554BEE2A8A58D700AAD038 /* CornerRadius.swift */,
 				81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */,
+				811CFF742A95365500BD07CF /* RedactShimmerViewModifier.swift */,
+				811CFF762A95367C00BD07CF /* Shimmer.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -432,6 +458,7 @@
 				81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */,
 				8197311B2A8D9465003A040E /* ButtonTextFieldWithSheet.swift in Sources */,
 				810C27442A85B2D700038409 /* DetailsScreen.swift in Sources */,
+				811CFF772A95367C00BD07CF /* Shimmer.swift in Sources */,
 				810583C82A8F925E00DE5E32 /* StateNavigationStack.swift in Sources */,
 				81F1D2EC2A8E942300BD801C /* OverviewPayment.swift in Sources */,
 				818EF8D82A845E4E00DC0E90 /* Fonts.swift in Sources */,
@@ -450,6 +477,7 @@
 				810583CA2A901A8400DE5E32 /* OrdersModel.swift in Sources */,
 				8120C0902A845AA10086BD41 /* Colors.swift in Sources */,
 				810C273A2A8553AC00038409 /* CoffeeItem.swift in Sources */,
+				81D55EDF2A96173A0098D4DA /* LoadingState.swift in Sources */,
 				810C27462A85B2F400038409 /* Cart.swift in Sources */,
 				810C27352A850E3D00038409 /* CoffeesModel.swift in Sources */,
 				8104BC162A9117D100B78D54 /* RowsCoffeeBar.swift in Sources */,
@@ -461,8 +489,11 @@
 				81D3B5552A87023000B1FBF1 /* Order.swift in Sources */,
 				8104BC182A91190700B78D54 /* LoginScreen.swift in Sources */,
 				81C64BA22A8945D500A4EE12 /* CustomButtonAddOrMinusItens.swift in Sources */,
+				811CFF7C2A95869400BD07CF /* NetWorkError.swift in Sources */,
 				8104BC0E2A90D88300B78D54 /* ArrayExtension.swift in Sources */,
 				81B0C6FC2A9242D00020B2ED /* TextFieldSheetDefault.swift in Sources */,
+				811CFF752A95365500BD07CF /* RedactShimmerViewModifier.swift in Sources */,
+				811CFF7A2A95867400BD07CF /* CoffeeWebService.swift in Sources */,
 				810C27482A85B30B00038409 /* FavoriteOrders.swift in Sources */,
 				81D3B5572A8702B000B1FBF1 /* orders.swift in Sources */,
 				81D96AA92A8AF9030027705C /* StateNavigationTabView.swift in Sources */,
@@ -471,6 +502,7 @@
 				81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */,
 				81F1D2F02A8E99F300BD801C /* RowDescription.swift in Sources */,
 				8104BC122A910E2000B78D54 /* AvatarsModel.swift in Sources */,
+				811CFF7E2A958EC700BD07CF /* Placeholders.swift in Sources */,
 				813A8AA12A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift in Sources */,
 				81FE05642A93DED80052AA7D /* ValidateTextField.swift in Sources */,
 			);

@@ -53,8 +53,22 @@ struct Order: View {
       .background(ColorsApp.brown)
       .cornerRadius(5)
       .frame(height: 100)
+      // view vai começar andar confrome o swipe
       .offset(x: offsetAnimated)
       .animation(.spring(), value: true)
+      // ideia pra fazer um swipe e deletar
+      // tambem poderia tentar essa impelmentação
+      // List {
+      // ForEach(items) { item in
+      // Text(item.title)
+      // .swipeActions {
+      // Button(role: .destructive) { delete() } label: {
+      // Label("Delete", systemImage: "trash")
+      // }
+      // }
+      // }
+      // }
+      // .navigationTitle("Shopping List")
       .gesture(
         DragGesture()
           .onChanged {

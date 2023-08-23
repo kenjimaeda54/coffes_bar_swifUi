@@ -15,16 +15,24 @@ struct CoffeeItem: View {
 
   var body: some View {
     VStack(alignment: .leading, spacing: 10) {
-      AsyncImage(url: URL(string: coffee.urlPhoto), scale: 8)
-        .scaledToFit()
-        .cornerRadius(5)
-        .frame(minHeight: 80)
+      AsyncImage(url: URL(string: coffee.urlPhoto), scale: 8) { phase in
+
+        if let image = phase.image {
+          image
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(10, corners: .allCorners)
+            .frame(width: .infinity, height: 100)
+        }
+      }
 
       Text(coffee.name)
         .lineLimit(2)
-        .font(.custom(FontsApp.interLight, size: 17))
+        .fontWithLineHeight(font: UIFont(name: FontsApp.interRegular, size: 17)!, lineHeight: 23)
         .foregroundColor(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.black : ColorsApp.white)
-        .frame(height: 50)
+        // quando possuir multiplas linhas precisa disso
+        .multilineTextAlignment(.leading)
+        .frame(height: 50, alignment: .leading)
 
       Button { handleSelectedCoffee() } label: {
         Text(coffee.price)
@@ -54,13 +62,13 @@ struct CoffeeItem: View {
     .padding(EdgeInsets(top: 5, leading: 10, bottom: 7, trailing: 7))
     .background(order.cartOrder.contains(where: { $0.id == coffee.id }) ? ColorsApp.beige : ColorsApp.brown)
     .cornerRadius(5)
-    .frame(width: 130, height: 250)
+    .frame(width: 130, height: 250, alignment: .leading)
   }
 }
 
 struct CoffeeItem_Previews: PreviewProvider {
   static var previews: some View {
-    CoffeeItem(coffee: coffeesMock[3], order: CartObservable(), handleSelectedCoffee: {})
+    CoffeeItem(coffee: coffeesMock[0], order: CartObservable(), handleSelectedCoffee: {})
       .previewLayout(.device)
   }
 }

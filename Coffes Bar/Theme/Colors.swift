@@ -15,4 +15,5 @@ struct ColorsApp {
   static let red = Color("red")
   static let white = Color("white")
   static let gray = Color("gray")
+  static let grayDark = Color("grayDark")
 }

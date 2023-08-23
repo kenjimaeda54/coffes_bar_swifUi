@@ -13,6 +13,7 @@ struct SiginScreen: View {
   @State private var nameIcon = "eye.slash.fill"
   @State private var email = ""
   @State private var password = ""
+  @State private var isShimmering = false
   @Binding var isLoged: Bool
   @State private var isSheetPresented = false
   @Environment(\.dismiss) private var dismiss
@@ -76,10 +77,7 @@ struct SiginScreen: View {
                 .aspectRatio(contentMode: .fit)
 
             } else {
-              Image("profile-default")
-                .resizable()
-                .frame(width: 80, height: 80)
-                .aspectRatio(contentMode: .fit)
+              PlaceholderAvatar()
             }
           }
         }
@@ -130,6 +128,7 @@ struct SiginScreen: View {
           )
         }
       }
+
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)

@@ -12,6 +12,7 @@ struct HomeScreen: View {
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @State private var isSheetPresented = false
+  @StateObject private var store = StoreHome()
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
@@ -90,24 +91,37 @@ struct HomeScreen: View {
           .cornerRadius(18)
           .padding()
 
-          LazyVGrid(columns: gridItemCoffee) {
-            ForEach(coffeesMock) { coffee in
-              // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView
-              NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
-                CoffeeItem(
-                  coffee: coffee, order: cart,
-                  handleSelectedCoffee: { handleSelectedCoffee(coffee) }
-                )
+          switch store.loading {
+          case .sucess:
+            LazyVGrid(columns: gridItemCoffee) {
+              ForEach(store.coffees) { coffee in
+                // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView ou NavigationStack
+                NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
+                  CoffeeItem(
+                    coffee: coffee, order: cart,
+                    handleSelectedCoffee: { handleSelectedCoffee(coffee) }
+                  )
+                }
               }
             }
+
+          case .failure:
+            Text("Não foi possivel carregar os dados")
+              .font(.custom(FontsApp.interRegular, size: 18))
+              .foregroundColor(ColorsApp.white)
+
+          default:
+            PlaceholderListCoffe(cart: cart)
           }
         }
       }
+
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
       .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
       .navigationBarBackButtonHidden(true)
       .onAppear {
         stateTabView.hiddeTabView = false
+        store.fetchAllCoffes()
       }
       // sheet
       // https://www.appcoda.com/swiftui-bottom-sheet-background/

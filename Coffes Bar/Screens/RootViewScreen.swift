@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct RootViewScreen: View {
+  // Tentar inserir user via enviroment
   @State private var isLoggedIn = false
+  @State private var user = UsersModel(id: "", name: "", email: "", avatarId: "", password: "")
 
   var body: some View {
     if isLoggedIn {
-      MainViewScreen()
+      MainViewScreen(user: user)
     } else {
-      LoginScreen(isLoged: $isLoggedIn)
+      LoginScreen(isLoged: $isLoggedIn, user: $user)
     }
   }
 }

@@ -12,7 +12,8 @@ import SwiftUI
 struct FavoriteOrders: View {
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @ObservedObject var order: CartObservable
-
+  @StateObject private var storeOrders = StoreOrders()
+  var user: UsersModel
   // depois clonar os dois
   // https://www.hackingwithswift.com/example-code/language/how-to-append-one-array-to-another-array
   @State private var auxiliaryUpdateOrder: [OrdersModel] = []
@@ -52,51 +53,64 @@ struct FavoriteOrders: View {
   }
 
   var body: some View {
-    List {
-      ForEach(ordersByUserMock) { ordersGroup in
-        Section {
-          ForEach(ordersGroup.orders) { order in
-            Button {
-              selectedOrder(ordersGroup.orders)
-            } label: {
-              Order(
-                order: OrdersModel(
-                  id: order.id,
-                  urlPhoto: order.urlImage,
-                  quantity: order.quantity,
-                  price: order.price,
-                  name: order.title
-                ),
-                handlePlusQuantity: {},
-                handleMinusQuantity: {}, removal: nil
-              )
-              .disabled(true)
-            }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-            .listRowBackground(ColorsApp.black)
-          }
-
-        } header: {
-          HeaderSectionFavoriteOrders()
-        }
-        .headerProminence(.increased)
+    if storeOrders.orderByUser.isEmpty {
+      VStack(alignment: .center) {
+        Text("Sem nehum pedido anterior")
+          .font(.custom(FontsApp.interMedium, size: 20))
+          .foregroundColor(ColorsApp.white)
       }
+      .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+      .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+      .background(ColorsApp.black)
+    } else {
+      List {
+        ForEach(storeOrders.orderByUser) { ordersGroup in
+          Section {
+            ForEach(ordersGroup.orders) { order in
+              Button {
+                selectedOrder(ordersGroup.orders)
+              } label: {
+                Order(
+                  order: OrdersModel(
+                    id: order.id,
+                    urlPhoto: order.urlImage,
+                    quantity: order.quantity,
+                    price: order.price,
+                    name: order.title
+                  ),
+                  handlePlusQuantity: {},
+                  handleMinusQuantity: {}, removal: nil
+                )
+                .disabled(true)
+              }
+              .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+              .listRowBackground(ColorsApp.black)
+            }
+
+          } header: {
+            HeaderSectionFavoriteOrders()
+          }
+          .headerProminence(.increased)
+        }
+      }
+      .listStyle(.grouped)
+      .navigationBarTitleDisplayMode(.inline)
+      .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+      .scrollContentBackground(.hidden)
+      .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
+      .scrollIndicators(.hidden)
+      .onAppear {
+        storeOrders.fetchAnOrderByUser(user.id)
+      }
+      .background(ColorsApp.black)
     }
-
-    .listStyle(.grouped)
-    .navigationBarTitleDisplayMode(.inline)
-    .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
-    .scrollContentBackground(.hidden)
-    .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
-    .scrollIndicators(.hidden)
-
-    .background(ColorsApp.black)
   }
 }
 
 struct OldOrders_Previews: PreviewProvider {
   static var previews: some View {
-    FavoriteOrders(order: CartObservable())
+    FavoriteOrders(order: CartObservable(), user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
       .environmentObject(StateNavigationTabView())
   }
 }

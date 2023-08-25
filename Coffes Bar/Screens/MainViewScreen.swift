@@ -11,12 +11,13 @@ import SwiftUI
 struct MainViewScreen: View {
   @ObservedObject var cartOders = CartObservable()
   @StateObject var stateTabView = StateNavigationTabView()
+  var user: UsersModel
 
   var body: some View {
     // maneira de navegar via codigo entre as tabs
     // alem de fazer as tagas criei um objeto que e compartilhado entre todas as views
     TabView(selection: $stateTabView.tagSelected) {
-      HomeScreen(cart: cartOders)
+      HomeScreen(cart: cartOders, user: user)
         .tabItem {
           Image(systemName: "house.fill")
         }
@@ -31,7 +32,7 @@ struct MainViewScreen: View {
           }
           .tag(1)
 
-      FavoriteOrders(order: cartOders)
+      FavoriteOrders(order: cartOders, user: user)
         .tabItem {
           Image(systemName: "heart.fill")
         }
@@ -67,7 +68,7 @@ struct MainViewScreen: View {
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainViewScreen()
+    MainViewScreen(user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
       .environmentObject(StateNavigationTabView())
   }
 }

@@ -24,7 +24,6 @@ class CoffeeWebService {
         completion(.success(response))
 
       } catch {
-        print(error)
         completion(.failure(.badDecoding))
       }
 

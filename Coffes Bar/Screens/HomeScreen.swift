@@ -12,7 +12,9 @@ struct HomeScreen: View {
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @State private var isSheetPresented = false
-  @StateObject private var store = StoreCoffess()
+  @StateObject var storeCoffess = StoreCoffess()
+  @StateObject var storeAvatars = StoreAvatar()
+  var user: UsersModel
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
@@ -51,7 +53,7 @@ struct HomeScreen: View {
               isSheetPresented = true
             } label: {
               AsyncImage(url: URL(
-                string: "https://firebasestorage.googleapis.com/v0/b/uploadimagesapicoffee.appspot.com/o/avatar01.png?alt=media&token=4a3820fa-b757-4bcd-b148-1cd914956112"
+                string: storeAvatars.avatarByUser.urlAvatar
               ), scale: 7) { phase in
 
                 if let image = phase.image {
@@ -61,10 +63,7 @@ struct HomeScreen: View {
                     .aspectRatio(contentMode: .fit)
 
                 } else {
-                  Image("profile-default")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .aspectRatio(contentMode: .fit)
+                  PlaceholderAvatar()
                 }
               }
             }
@@ -91,10 +90,10 @@ struct HomeScreen: View {
           .cornerRadius(18)
           .padding()
 
-          switch store.loading {
+          switch storeCoffess.loading {
           case .sucess:
             LazyVGrid(columns: gridItemCoffee) {
-              ForEach(store.coffees) { coffee in
+              ForEach(storeCoffess.coffees) { coffee in
                 // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView ou NavigationStack
                 NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
                   CoffeeItem(
@@ -119,7 +118,8 @@ struct HomeScreen: View {
       .navigationBarBackButtonHidden(true)
       .onAppear {
         stateTabView.hiddeTabView = false
-        store.fetchAllCoffes()
+        storeAvatars.fetchAnAvatar(user.avatarId)
+        storeCoffess.fetchAllCoffes()
       }
       // sheet
       // https://www.appcoda.com/swiftui-bottom-sheet-background/
@@ -138,7 +138,7 @@ struct HomeScreen: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeScreen(cart: CartObservable())
+    HomeScreen(cart: CartObservable(), user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
       .environmentObject(StateNavigationTabView())
   }
 }

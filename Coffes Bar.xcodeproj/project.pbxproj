@@ -38,6 +38,8 @@
 		8120C0902A845AA10086BD41 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120C08F2A845AA10086BD41 /* Colors.swift */; };
 		8122AF612A8A5424003C961B /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8122AF602A8A5424003C961B /* URLImage */; };
 		8122AF632A8A5424003C961B /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 8122AF622A8A5424003C961B /* URLImageStore */; };
+		812C58FA2A982BA50055FFFD /* StoreOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C58F92A982BA50055FFFD /* StoreOrders.swift */; };
+		812C58FC2A982BC80055FFFD /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C58FB2A982BC80055FFFD /* OrderService.swift */; };
 		813A8AA12A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A8AA02A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift */; };
 		81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BEE2A8A58D700AAD038 /* CornerRadius.swift */; };
 		81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */; };
@@ -71,6 +73,7 @@
 		81D55EE72A9628C70098D4DA /* AvatarWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D55EE62A9628C70098D4DA /* AvatarWebService.swift */; };
 		81D55EE92A962B600098D4DA /* StoreAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D55EE82A962B600098D4DA /* StoreAvatar.swift */; };
 		81D55EEB2A962D760098D4DA /* TextError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D55EEA2A962D760098D4DA /* TextError.swift */; };
+		81D55EEE2A96CFCF0098D4DA /* SwiftUISnackbar in Frameworks */ = {isa = PBXBuildFile; productRef = 81D55EED2A96CFCF0098D4DA /* SwiftUISnackbar */; };
 		81D96AA92A8AF9030027705C /* StateNavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D96AA82A8AF9030027705C /* StateNavigationTabView.swift */; };
 		81F1D2EC2A8E942300BD801C /* OverviewPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2EB2A8E942300BD801C /* OverviewPayment.swift */; };
 		81F1D2EE2A8E97B300BD801C /* PurchaseMadeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1D2ED2A8E97B300BD801C /* PurchaseMadeScreen.swift */; };
@@ -110,6 +113,8 @@
 		8120C0842A8456D70086BD41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8120C0872A8456D70086BD41 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8120C08F2A845AA10086BD41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		812C58F92A982BA50055FFFD /* StoreOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreOrders.swift; sourceTree = "<group>"; };
+		812C58FB2A982BC80055FFFD /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		813A8AA02A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionFavoriteOrders.swift; sourceTree = "<group>"; };
 		81554BEE2A8A58D700AAD038 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8122AF632A8A5424003C961B /* URLImageStore in Frameworks */,
+				81D55EEE2A96CFCF0098D4DA /* SwiftUISnackbar in Frameworks */,
 				8122AF612A8A5424003C961B /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +245,7 @@
 				819731142A8CF274003A040E /* StoreLocation.swift */,
 				81D55EE02A96209D0098D4DA /* StoreUsers.swift */,
 				81D55EE82A962B600098D4DA /* StoreAvatar.swift */,
+				812C58F92A982BA50055FFFD /* StoreOrders.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				811CFF792A95867400BD07CF /* CoffeeWebService.swift */,
 				81D55EE42A9624970098D4DA /* UserWebService.swift */,
 				81D55EE62A9628C70098D4DA /* AvatarWebService.swift */,
+				812C58FB2A982BC80055FFFD /* OrderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 			packageProductDependencies = (
 				8122AF602A8A5424003C961B /* URLImage */,
 				8122AF622A8A5424003C961B /* URLImageStore */,
+				81D55EED2A96CFCF0098D4DA /* SwiftUISnackbar */,
 			);
 			productName = "Coffes Bar";
 			productReference = 8120C07D2A8456D60086BD41 /* Coffes Bar.app */;
@@ -397,6 +406,7 @@
 			mainGroup = 8120C0742A8456D60086BD41;
 			packageReferences = (
 				8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */,
+				81D55EEC2A96CFCF0098D4DA /* XCRemoteSwiftPackageReference "SwiftUISnackbar" */,
 			);
 			productRefGroup = 8120C07E2A8456D60086BD41 /* Products */;
 			projectDirPath = "";
@@ -493,6 +503,7 @@
 				8104BC102A910DF900B78D54 /* avatarsMock.swift in Sources */,
 				810583CC2A901AC000DE5E32 /* OrdersByUserModel.swift in Sources */,
 				810C27422A85B29E00038409 /* MainViewScreen.swift in Sources */,
+				812C58FC2A982BC80055FFFD /* OrderService.swift in Sources */,
 				810583CA2A901A8400DE5E32 /* OrdersModel.swift in Sources */,
 				81D55EE92A962B600098D4DA /* StoreAvatar.swift in Sources */,
 				81D55EE52A9624970098D4DA /* UserWebService.swift in Sources */,
@@ -507,6 +518,7 @@
 				81B0C7002A92513A0020B2ED /* MaxLengthCharacter.swift in Sources */,
 				810583CE2A901C1000DE5E32 /* ordersByUserMock.swift in Sources */,
 				8120C0812A8456D60086BD41 /* Coffes_BarApp.swift in Sources */,
+				812C58FA2A982BA50055FFFD /* StoreOrders.swift in Sources */,
 				81D3B5532A86AECD00B1FBF1 /* CartObservable.swift in Sources */,
 				810C27322A850DF400038409 /* coffeesMock.swift in Sources */,
 				81D3B5552A87023000B1FBF1 /* Order.swift in Sources */,
@@ -743,6 +755,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		81D55EEC2A96CFCF0098D4DA /* XCRemoteSwiftPackageReference "SwiftUISnackbar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zaniluca/SwiftUISnackbar";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -755,6 +775,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8122AF5F2A8A5424003C961B /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImageStore;
+		};
+		81D55EED2A96CFCF0098D4DA /* SwiftUISnackbar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81D55EEC2A96CFCF0098D4DA /* XCRemoteSwiftPackageReference "SwiftUISnackbar" */;
+			productName = SwiftUISnackbar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

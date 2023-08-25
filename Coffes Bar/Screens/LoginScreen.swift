@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import SwiftUISnackbar
 
 struct LoginScreen: View {
   @State private var isSheetPresentedEmail = false
   @State private var isSheetPresentedPassword = false
   @State private var nameIcon = "eye.slash.fill"
   @State private var isPresentedSigin = false
+  @State private var isSnackBarPresented = false
   @Binding var isLoged: Bool
   @State private var email = ""
   @State private var password = ""
+  @StateObject var storeUser = StoreUsers()
+  @Binding var user: UsersModel
   var passwordSecurity: String {
     var caracter = ""
     let arrayPassword = Array(repeating: "•", count: password.count)
@@ -42,6 +46,23 @@ struct LoginScreen: View {
       return regexEmail.firstMatch(in: value, range: range) != nil
     } catch {
       return false
+    }
+  }
+
+  func handleLogin() {
+    let params = [
+      "email": email,
+      "password": password
+    ]
+    storeUser.loginUser(params: params) {
+      if storeUser.loading == LoadingState.sucess {
+        user = storeUser.user
+        isLoged = true
+      }
+
+      if storeUser.loading == LoadingState.failure {
+        isSnackBarPresented = true
+      }
     }
   }
 
@@ -108,10 +129,11 @@ struct LoginScreen: View {
       .background(
         ColorsApp.black
       )
+
       .safeAreaInset(edge: .bottom, content: {
         VStack {
           CustomButtonDefault(
-            handleButton: { isLoged = true },
+            handleButton: handleLogin,
             width: .infinity,
             title: "Seguir",
             color: nil,
@@ -127,15 +149,19 @@ struct LoginScreen: View {
         .padding(EdgeInsets(top: 20, leading: 40, bottom: 0, trailing: 20))
       })
       .navigationDestination(isPresented: $isPresentedSigin) {
-        SiginScreen(isLoged: $isLoged)
+        SiginScreen(isLoged: $isLoged, user: $user)
           .navigationBarBackButtonHidden(true)
       }
+      .snackbar(isShowing: $isSnackBarPresented, title: "Email ou senha incorreta", style: .custom(ColorsApp.brown))
     }
   }
 }
 
 struct LoginScreen_Previews: PreviewProvider {
   static var previews: some View {
-    LoginScreen(isLoged: .constant(false))
+    LoginScreen(
+      isLoged: .constant(false),
+      user: .constant(UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
+    )
   }
 }

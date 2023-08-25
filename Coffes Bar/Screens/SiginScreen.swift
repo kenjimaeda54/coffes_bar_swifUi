@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUISnackbar
 
 struct SiginScreen: View {
   @State private var isSheetPresentedEmail = false
@@ -23,6 +24,7 @@ struct SiginScreen: View {
   @State private var isSheetPresented = false
   @StateObject private var storeAvatar = StoreAvatar()
   @StateObject private var storeUser = StoreUsers()
+  @Binding var user: UsersModel
   @Environment(\.dismiss) private var dismiss
   var passwordSecurity: String {
     var caracter = ""
@@ -66,14 +68,15 @@ struct SiginScreen: View {
       "avatarId": avatarSelected.id
     ]
 
-    storeUser.creatUsers(params: params)
+    storeUser.creatUsers(params: params) {
+      if storeUser.loading == .sucess {
+        user = storeUser.user
+        isLoged = true
+      }
 
-    if storeUser.loading == .sucess {
-      print(storeUser.user)
-    }
-
-    if storeUser.loading == .failure {
-      isSnackBarPresentedError = true
+      if storeUser.loading == .failure {
+        isSnackBarPresentedError = true
+      }
     }
   }
 
@@ -162,7 +165,7 @@ struct SiginScreen: View {
         }
       }
       .onAppear {
-        storeAvatar.fetchAvatar()
+        storeAvatar.fetchAllAvatar()
       }
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
@@ -213,14 +216,20 @@ struct SiginScreen: View {
           }
         }
       }
-       
-      
+      .snackbar(
+        isShowing: $isSnackBarPresentedError,
+        title: "Possui alguem com esse email no aplicativo",
+        style: .custom(ColorsApp.brown)
+      )
     }
   }
 }
 
 struct SiginScreen_Previews: PreviewProvider {
   static var previews: some View {
-    SiginScreen(isLoged: .constant(false))
+    SiginScreen(
+      isLoged: .constant(false),
+      user: .constant(UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
+    )
   }
 }

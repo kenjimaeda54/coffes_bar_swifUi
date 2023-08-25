@@ -58,4 +58,57 @@ class UserWebService {
 
     }.resume()
   }
+
+  func loginUser(params: [String: Any], completion: @escaping (Result<UsersModel, NetworkError>) -> Void) {
+    guard let url = URL(string: "\(baseUrl)/users/login") else {
+      return completion(.failure(.badUrl))
+    }
+
+    var request = URLRequest(url: url)
+
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+    // se precisar de token
+    // request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    //	request.setValue(Constants.API_TOKEN, forHTTPHeaderField: "Authorization")
+
+    do {
+      request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+
+    } catch {
+      print(error.localizedDescription)
+      completion(.failure(.invalidRequest))
+    }
+
+    URLSession.shared.dataTask(with: request) { data, _, error in
+
+      guard let data = data, error == nil else {
+        return completion(.failure(.badUrl))
+      }
+
+      do {
+        if let response = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
+          if response["error"] != nil {
+            completion(.failure(.noData))
+          } else {
+            let user = UsersModel(
+              id: response["_id"] ?? "",
+              name: response["name"] ?? "",
+              email: response["email"] ?? "",
+              avatarId: response["avatarId"] ?? "",
+              password: response["password"] ?? ""
+            )
+
+            completion(.success(user))
+          }
+        }
+
+      } catch {
+        completion(.failure(.noData))
+      }
+
+    }.resume()
+  }
 }

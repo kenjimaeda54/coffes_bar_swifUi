@@ -18,6 +18,7 @@ struct FavoriteOrders: View {
   // https://www.hackingwithswift.com/example-code/language/how-to-append-one-array-to-another-array
   @State private var auxiliaryUpdateOrder: [OrdersModel] = []
   @State private var auxiliaryOrder: [OrdersModel] = []
+  @State private var valueTotalCart = ""
 
   func selectedOrder(_ orders: [Orders]) {
     orders.forEach { orders in
@@ -63,9 +64,13 @@ struct FavoriteOrders: View {
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
       .background(ColorsApp.black)
+      .onAppear {
+        storeOrders.fetchAnOrderByUser(user.id)
+      }
     } else {
       List {
         ForEach(storeOrders.orderByUser) { ordersGroup in
+
           Section {
             ForEach(ordersGroup.orders) { order in
               Button {
@@ -89,7 +94,10 @@ struct FavoriteOrders: View {
             }
 
           } header: {
-            HeaderSectionFavoriteOrders()
+            HeaderSectionFavoriteOrders(
+              valueTotalCart: conveterStringCurrencyInDouble(ordersGroup.priceCartTotal) +
+                conveterStringCurrencyInDouble(ordersGroup.tax)
+            )
           }
           .headerProminence(.increased)
         }

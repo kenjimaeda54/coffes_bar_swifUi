@@ -178,6 +178,8 @@ struct SiginScreen: View {
           color: nil,
           textColor: nil
         )
+        .disabled(!validateEmail || !validatePassword)
+        .opacity(validateEmail && validatePassword ? 1 : 0.5)
         .padding(EdgeInsets(top: 0, leading: 20, bottom: 30, trailing: 20))
 
       })

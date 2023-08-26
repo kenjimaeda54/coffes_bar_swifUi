@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FinishPaymentScreen: View {
   @StateObject var locationManager = LocationManager()
+  @StateObject var storeCart = StoreOrders()
   @ObservedObject var cart: CartObservable
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject private var stateTabView: StateNavigationTabView
@@ -23,9 +24,9 @@ struct FinishPaymentScreen: View {
   @State private var district = ""
   @State private var city = ""
   @State var goWhenTrue = false
-
   let tax: Double
-  let value: Double
+  let valueTotalCart: Double
+  let userId: String
 
   func handleBack() {
     dismiss()
@@ -33,6 +34,32 @@ struct FinishPaymentScreen: View {
 
   func returnTextIfValueFalse(conditional: Bool, value: String, optionalValue: String) -> String {
     return conditional ? optionalValue : value
+  }
+
+  // exemplos de http body
+  // https://www.appsdeveloperblog.com/http-post-request-example-in-swift/
+  func handleCreateCars() {
+    let orderByUser = cart.cartOrder.map { OrdersByUser(
+      title: $0.name,
+      urlImage: $0.urlPhoto,
+      price: $0.price,
+      quantity: $0.quantity
+    ) }
+
+    let formatValueTotal = String(format: "%.2f", valueTotalCart).replacingOccurrences(of: ".", with: ",")
+
+    let formatTax = String(format: "%.2f", tax).replacingOccurrences(of: ".", with: ",")
+
+    let demand = DemandByUserModel(
+      orders: orderByUser,
+      priceCartTotal: "R$ \(formatValueTotal)",
+      userId: userId,
+      tax: "R$ \(formatTax)"
+    )
+    let params = CartByUserModel(cart: demand)
+
+    storeCart.createOrdersCart(params)
+    stateStack.isActivePurchasePayment = true
   }
 
   var body: some View {
@@ -134,9 +161,9 @@ struct FinishPaymentScreen: View {
       }
       .safeAreaInset(edge: .bottom) {
         VStack(spacing: 15) {
-          OverviewPayment(tax: tax, value: value)
+          OverviewPayment(tax: tax, value: valueTotalCart)
           CustomButtonDefault(
-            handleButton: { stateStack.isActivePurchasePayment = true },
+            handleButton: handleCreateCars,
             width: .infinity,
             title: "Tudo certo",
             color: nil,
@@ -165,7 +192,7 @@ struct FinishPaymentScreen: View {
                 value: streetNumber,
                 optionalValue: locationManager.addressUser.numberStreet
               ),
-              valueTotal: tax + value
+              valueTotal: tax + valueTotalCart
             )
           }
         }
@@ -177,7 +204,7 @@ struct FinishPaymentScreen: View {
 
 struct FinishedPaymentScreen_Previews: PreviewProvider {
   static var previews: some View {
-    FinishPaymentScreen(cart: CartObservable(), tax: 3.20, value: 12.0)
+    FinishPaymentScreen(cart: CartObservable(), tax: 3.20, valueTotalCart: 12.0, userId: "")
       .environmentObject(StateNavigationTabView())
       .environmentObject(StateNavigationStack())
   }

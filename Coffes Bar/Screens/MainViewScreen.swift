@@ -25,7 +25,7 @@ struct MainViewScreen: View {
         .toolbar(stateTabView.hiddeTabView ? .hidden : .visible, for: .tabBar)
         .tag(0)
 
-      Cart(cart: cartOders)
+      Cart(cart: cartOders, user: user)
 
           .tabItem {
             Image(systemName: "cart.fill")

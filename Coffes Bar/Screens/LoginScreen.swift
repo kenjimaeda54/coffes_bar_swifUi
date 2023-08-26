@@ -139,6 +139,8 @@ struct LoginScreen: View {
             color: nil,
             textColor: nil
           )
+          .disabled(!validateEmail || !validatePassword)
+          .opacity(validateEmail && validatePassword ? 1 : 0.5)
           Button(action: { isPresentedSigin = true }) {
             Text("Se não possui cadastro clica aqui")
               .font(.custom(FontsApp.interThin, size: 17))

@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct HeaderSectionFavoriteOrders: View {
+  let valueTotalCart: Double
+
+  var formatValueTotal: String {
+    return String(format: "%.2f", valueTotalCart).replacingOccurrences(of: ".", with: ",")
+  }
+
   var body: some View {
     HStack {
       Text("Valor total:")
         .font(.custom(FontsApp.interRegular, size: 21))
         .foregroundColor(ColorsApp.white)
-      Text("R$14")
+      Text(formatValueTotal)
         .font(.custom(FontsApp.interMedium, size: 21))
         .foregroundColor(ColorsApp.white)
       Spacer()
@@ -25,6 +31,6 @@ struct HeaderSectionFavoriteOrders: View {
 
 struct HeaderSectionFavoriteOrders_Previews: PreviewProvider {
   static var previews: some View {
-    HeaderSectionFavoriteOrders()
+    HeaderSectionFavoriteOrders(valueTotalCart: 14.00)
   }
 }

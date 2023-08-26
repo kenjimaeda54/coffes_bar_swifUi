@@ -11,13 +11,25 @@ struct OverviewPayment: View {
   let tax: Double
   let value: Double
 
+  var formatValueTotal: String {
+    return String(format: "%.2f", value + tax).replacingOccurrences(of: ".", with: ",")
+  }
+
+  var formatValue: String {
+    return String(format: "%.2f", value).replacingOccurrences(of: ".", with: ",")
+  }
+
+  var formatTax: String {
+    return String(format: "%.2f", tax).replacingOccurrences(of: ".", with: ",")
+  }
+
   var body: some View {
     HStack {
       Text("Taxa de entrega")
         .font(.custom(FontsApp.interRegular, size: 17))
         .foregroundColor(ColorsApp.white)
       Spacer()
-      Text("R$ \(String(format: "%.2f", tax))")
+      Text("R$ \(formatTax)")
         .font(.custom(FontsApp.interBold, size: 19))
         .foregroundColor(ColorsApp.white)
     }
@@ -26,7 +38,7 @@ struct OverviewPayment: View {
         .font(.custom(FontsApp.interRegular, size: 17))
         .foregroundColor(ColorsApp.white)
       Spacer()
-      Text("R$ \(String(format: "%.2f", value))")
+      Text("R$ \(formatValue)")
         .font(.custom(FontsApp.interBold, size: 19))
         .foregroundColor(ColorsApp.white)
     }
@@ -38,7 +50,7 @@ struct OverviewPayment: View {
         .font(.custom(FontsApp.interRegular, size: 17))
         .foregroundColor(ColorsApp.white)
       Spacer()
-      Text("R$ \(String(format: "%.2f", value + tax))")
+      Text("R$ \(formatValueTotal)")
         .font(.custom(FontsApp.interBold, size: 19))
         .foregroundColor(ColorsApp.white)
     }

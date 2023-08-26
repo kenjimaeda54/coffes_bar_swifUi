@@ -9,30 +9,21 @@ import SwiftUI
 struct Cart: View {
   @ObservedObject var cart: CartObservable
   @State private var tax = Double.random(in: 1..<7)
-  @State private var value: Double = 0
+  @State private var valueTotalCart: Double = 0
   @State private var idCoffeeSelected = "1"
   @State private var offsetAnimated: CGFloat = 0.0
   @State private var goWhenTrue = false
+  let user: UsersModel
   @Environment(\.dismiss) var dimiss
   @EnvironmentObject var stateTabView: StateNavigationTabView
   @StateObject var stateStackView = StateNavigationStack()
   // criei um objeto que vai ser compartilhado com todas as stack pra poder conseguir eliminar todas de uma vez
 
-  func conveterStringCurrencyInDouble(_ value: String) -> Double {
-    // replace string https://www.tutorialspoint.com/swift-program-to-replace-a-character-at-a-specific-index#:~:text=Method%203%3A%20Using%20the%20replacingCharacters,by%20the%20given%20replacement%20character.
-    // number foramt currency
-    // https://medium.com/@mariannM/currency-converter-in-swift-4-2-97384a56da41
-    let stringSplitComma = value.split(separator: ",")
-    let stringSplitSymbol = stringSplitComma[0].split(separator: " ")
-    let stringSlpited = "\(stringSplitSymbol[1]).\(stringSplitComma[1])"
-    return Double(stringSlpited) ?? 0.0
-  }
-
   func handlePlusQuantity(_ coffee: OrdersModel) {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity < 50 {
         let newQuantity = $0.quantity + 1
-        value += conveterStringCurrencyInDouble($0.price)
+        valueTotalCart += conveterStringCurrencyInDouble($0.price)
         let newOrder = OrdersModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
@@ -53,7 +44,7 @@ struct Cart: View {
     let newOrder = cart.cartOrder.map {
       if $0.id == coffee.id && $0.quantity > 1 {
         let newQuantity = $0.quantity - 1
-        value -= conveterStringCurrencyInDouble($0.price)
+        valueTotalCart -= conveterStringCurrencyInDouble($0.price)
         let newOrder = OrdersModel(
           id: $0.id,
           urlPhoto: $0.urlPhoto,
@@ -101,7 +92,7 @@ struct Cart: View {
                   removal: {
                     if let index = cart.cartOrder.firstIndex(where: { $0.id == coffee.id }) {
                       let order = cart.cartOrder.remove(at: index)
-                      value -= (conveterStringCurrencyInDouble(order.price) * Double(order.quantity))
+                      valueTotalCart -= (conveterStringCurrencyInDouble(order.price) * Double(order.quantity))
                     }
                   }
                 )
@@ -116,7 +107,7 @@ struct Cart: View {
               .frame(height: 1)
               .overlay(ColorsApp.white.opacity(0.2))
 
-            OverviewPayment(tax: tax, value: value)
+            OverviewPayment(tax: tax, value: valueTotalCart)
 
             CustomButtonDefault(
               handleButton: { stateStackView.isActiveFinishPayment = true },
@@ -129,14 +120,15 @@ struct Cart: View {
             // sempre que navega fica ativo por isso criei um observableobject
             // na ultim tela que e PurchaseScreeen elimino todas as views ativas
             .navigationDestination(isPresented: $stateStackView.isActiveFinishPayment) {
-              FinishPaymentScreen(cart: cart, tax: tax, value: value)
+              FinishPaymentScreen(cart: cart, tax: tax, valueTotalCart: valueTotalCart, userId: user.id)
             }
           }
           .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
           .frame(width: .infinity)
           .background(ColorsApp.black, ignoresSafeAreaEdges: .all)
           .onAppear {
-            value = cart.cartOrder.reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
+            valueTotalCart = cart.cartOrder
+              .reduce(0) { $0 + (conveterStringCurrencyInDouble($1.price) * Double($1.quantity)) }
             stateTabView.hiddeTabView = false
           }
         }
@@ -148,7 +140,7 @@ struct Cart: View {
 
 struct Cart_Previews: PreviewProvider {
   static var previews: some View {
-    Cart(cart: CartObservable())
+    Cart(cart: CartObservable(), user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
       .environmentObject(StateNavigationTabView())
   }
 }

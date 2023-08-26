@@ -31,4 +31,25 @@ class StoreOrders: ObservableObject {
       }
     }
   }
+
+  func createOrdersCart(_ params: CartByUserModel) {
+    OrderService().createOrderByCart(params: params) { result in
+
+      switch result {
+      case var .success(stats):
+
+        DispatchQueue.main.async {
+          self.loading = LoadingState.sucess
+        }
+
+      case var .failure(error):
+
+        print(error)
+
+        DispatchQueue.main.async {
+          self.loading = LoadingState.failure
+        }
+      }
+    }
+  }
 }

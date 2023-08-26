@@ -43,6 +43,8 @@
 		813A8AA12A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A8AA02A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift */; };
 		81554BEF2A8A58D700AAD038 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BEE2A8A58D700AAD038 /* CornerRadius.swift */; };
 		81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */; };
+		816562A52A994CD800142150 /* CartByUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816562A42A994CD800142150 /* CartByUserModel.swift */; };
+		816562A72A99755700142150 /* helpersFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816562A62A99755700142150 /* helpersFunction.swift */; };
 		818EF8D82A845E4E00DC0E90 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818EF8D72A845E4E00DC0E90 /* Fonts.swift */; };
 		818EF8FE2A846A2D00DC0E90 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */; };
 		818EF8FF2A846A2D00DC0E90 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 818EF8F62A846A2D00DC0E90 /* Inter-ExtraLight.ttf */; };
@@ -118,6 +120,8 @@
 		813A8AA02A903B31008BD0F0 /* HeaderSectionFavoriteOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionFavoriteOrders.swift; sourceTree = "<group>"; };
 		81554BEE2A8A58D700AAD038 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		81554BF02A8A5C0600AAD038 /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
+		816562A42A994CD800142150 /* CartByUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartByUserModel.swift; sourceTree = "<group>"; };
+		816562A62A99755700142150 /* helpersFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpersFunction.swift; sourceTree = "<group>"; };
 		818EF8D62A845DCA00DC0E90 /* Coffes-Bar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Coffes-Bar-Info.plist"; sourceTree = SOURCE_ROOT; };
 		818EF8D72A845E4E00DC0E90 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		818EF8F52A846A2D00DC0E90 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				810583CB2A901AC000DE5E32 /* OrdersByUserModel.swift */,
 				8104BC112A910E2000B78D54 /* AvatarsModel.swift */,
 				81D55EE22A9620F40098D4DA /* UsersModel.swift */,
+				816562A42A994CD800142150 /* CartByUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				81FE05632A93DED80052AA7D /* ValidateTextField.swift */,
 				811CFF7B2A95869400BD07CF /* NetWorkError.swift */,
 				81D55EDE2A96173A0098D4DA /* LoadingState.swift */,
+				816562A62A99755700142150 /* helpersFunction.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81554BF12A8A5C0600AAD038 /* FontWithLineHeight.swift in Sources */,
+				816562A52A994CD800142150 /* CartByUserModel.swift in Sources */,
 				8197311B2A8D9465003A040E /* ButtonTextFieldWithSheet.swift in Sources */,
 				810C27442A85B2D700038409 /* DetailsScreen.swift in Sources */,
 				811CFF772A95367C00BD07CF /* Shimmer.swift in Sources */,
@@ -502,6 +509,7 @@
 				81FE05662A93E86B0052AA7D /* SiginScreen.swift in Sources */,
 				8104BC102A910DF900B78D54 /* avatarsMock.swift in Sources */,
 				810583CC2A901AC000DE5E32 /* OrdersByUserModel.swift in Sources */,
+				816562A72A99755700142150 /* helpersFunction.swift in Sources */,
 				810C27422A85B29E00038409 /* MainViewScreen.swift in Sources */,
 				812C58FC2A982BC80055FFFD /* OrderService.swift in Sources */,
 				810583CA2A901A8400DE5E32 /* OrdersModel.swift in Sources */,

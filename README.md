@@ -1,11 +1,15 @@
 # Coffess Bar
-Aplicativo de martkplace , onde usuario pode seleiconar os na tela princiapl como tambem pesquisar pelos favoritos,ao selecionar o produto ele vai para o carrinho nesta etapa pode adiconar mais produtos então aumenta a quantidade ou descatar algum produto que esta no carrinho.
-Usuario tambem po visualizar os pedidos antigos que fez no aplicativo, como tambem atualizar seu avatar
+Aplicativo de martkplace , onde usuário na tela principal pode selecionar é pesquisar os cafés favoritos, ao selecionar o produto vai para o carrinho, nesta etapa pode adicionar mais produtos, aumentar quantidade do produto selecionado ou destacar algum produto que esta no carrinho.
+Usuário também pode visualizar os pedidos antigos que fez no aplicativo, como também atualizar seu avata
+
+## Referencia
+- [https://github.com/kenjimaeda54/coffees_bar_api_express] de minha altoria
+- [Desing] (https://br.pinterest.com/pin/524458319117494865/)
 
 
 ## Feature
-- Arquitetura do projeto foi construida no MV, esse desing pattern diminui a complexidade e traz os beneficios do MVVM
-- Priemria parte e construir os modelos( Models), depois a camada de serviço(Services) e por fim faz uma camada intermediario no caso nome era store
+- Arquitetura do projeto foi construída no [MV](https://betterprogramming.pub/mv-state-pattern-a-better-way-of-building-swiftui-apps-2cf2da6652fa), diminuindo a complexidade é traz os benefícios do MVVM
+- Primeira parte e construir os modelos( Models), depois a camada de serviço(Services) e por fim faz uma camada intermediário no caso nome e store
 
 
 ```swift
@@ -258,7 +262,7 @@ class StoreUsers: ObservableObject {
 
 
 //View
-//quando deseja qeu assim aparecer view carregar os store
+//com onAppear assim que a tela carregar , e feito o fetch com store
 @StateObject var storeUpdateUser = StoreUsers()
 .onAppear {
         stateTabView.hiddeTabView = false
@@ -271,8 +275,8 @@ class StoreUsers: ObservableObject {
 ```
 
 ##
-- Existem N abordagem para realizar http post no swift, uma maneira mais simples e construir um model com protocolo Codable e realizar o encode dessa model outra alterantiva e enviar um dicionario de string
-- Abaixo os dois modelos, [este artigo e otimo sobre uso de http post swift](https://www.appsdeveloperblog.com/http-post-request-example-in-swift/#google_vignette)
+- Existem N abordagem para realizar http post no swift, uma maneira mais simples e construir um Model com protocolo Codable,  realiza o encode dela, outra alternativa envia um dicionário de string
+- Abaixo os dois modelos, [este artigo e ótimo sobre uso de http post swift](https://www.appsdeveloperblog.com/http-post-request-example-in-swift/#google_vignette)
 
 
 ```swift
@@ -361,7 +365,7 @@ var request = URLRequest(url: url)
 ```
 
 ## 
-- Extension Swift e algo podero apliquei alguns como [spreed opator]( https://gist.github.com/cprovatas/d07226c3b8f4bd37dd6232d9ed013d6a), [max length](https://stackoverflow.com/questions/56476007/swiftui-textfield-max-length),[regex](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+- Extension Swift e algo poderoso apliquei alguns como [spreed opator]( https://gist.github.com/cprovatas/d07226c3b8f4bd37dd6232d9ed013d6a), [max length](https://stackoverflow.com/questions/56476007/swiftui-textfield-max-length),[regex](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
 
 
 
@@ -423,12 +427,11 @@ TextField(
 ```
 
 ## 
-- Usei um conceito interessante para deixar o input dinamico, basicmente e o uso da propriedade .vertical, ao usar essa propriedade não ira conseguir usar o botão de reotno do teclado uma alternativa e usaro proprio Binding como abaixo
-- Repara abaixo que estamos usando o wrap FocusState ele e importamente pra retirarmos o foco do teclado
-- Se desejar alterar o estilo do botão do teclado pode a proprieadde  submitLabel
-- Quando desejar fazer um focus por campos pode fazer um enum e assim ao implementar uma logica consigo pluar de input para inpout usando esse campo, exemplo abaixo estou usando apneas message mas poderia ter email,password e ir navaegando automatico entre os campos usando focus
+- Usei um conceito interessante para deixar o input dinâmico, basicamente com uso da propriedade .vertical, ao implementar não ira consegui usar o botão de retorno do teclado, uma alternativa é uso Binding como exemplo abaixo
+- Repara que estamos usando o  FocusState, importante  para retirarmos o foco do teclado
+- Se deseja altera o estilo do botão do teclado use o  submitLabel
+- Quando deseja faze focus dinâmico para vários campos, pode fazer um Enum é assim pula de input para input usando focus, exemplo abaixo estou usando apenas message, mas poderia ter email,password e ir navegando automático entre os campos usando focus
 
-- 
 
 ```swift
   @FocusState private var searchIsFocused: Bool
@@ -455,7 +458,7 @@ TextField(
             .focused($searchIsFocused)
 
 
-//usando focus para varios campos e submitLabel
+//usando focus para varios campos é submitLabel
 
 enum Field: Int, Hashable {
   case message
@@ -489,11 +492,11 @@ enum Field: Int, Hashable {
 
 ```
 ##
-- Quando deseja criar objetos que serão compartilhados com toda aplicação usamos o enrironmentObject como exemplo abaixo
+- Quando deseja criar objetos que serão compartilhados com toda aplicação usamos o environmentObject como exemplo abaixo
 
 
 ```swift
-  //criando a referencia todas que estiverem englobado pela MainView terao acesso
+  //criando a referencia, todas View que  estiverem englobado pela MainView terao acesso
 
   @StateObject var stateTabView = StateNavigationTabView()
 
@@ -581,8 +584,7 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 ## 
-- Exemplo abaixo como implementar nesting de navegação o exmplo abaixo, quando navega pra uma stack removia a tab bar e  ao retonrar dessa stack implmentava novmanete a tab bar
-
+- Exemplo abaixo como implementa nesting de navegação, quando navega pra uma stack remove a tab bar é ao retorna dessa stack, implementa novamente a tab bar
 
 ```swift
 // implementadoa logica da tab view, imporamente usar a palavra tag com ela consigo navegar via codigo para qualquer tab
@@ -649,7 +651,7 @@ func handleBack() {
 ```
 
 ## 
-- Para limpar as stack do fluxo de navegação e não interferer com as tab implementei uma classe ObservableObject e com ela eu conseguia remover usando um exemplo do pop
+- Para limpar as stack do fluxo de navegação e não interfere com as Tab, implementei uma classe ObservableObject , com ela eu conseguia remover usando um exemplo do pop
 
 ```swift
 //classe
@@ -703,7 +705,7 @@ class StateNavigationStack: ObservableObject {
 
 //PurschaseMadeScreen
 
-//aqui eu matava todas e navega para as tab, dimiss elemina atual
+//aqui  matava todas e navega para as tab, dimiss elemina atual
 
   @EnvironmentObject private var stateStack: StateNavigationStack
 
@@ -751,9 +753,11 @@ class StateNavigationStack: ObservableObject {
 
 ##
 - Trabalhei usando o swiftFormat e o swfitLint
-- Para ambos criamos um script no target no projeto em build phases
-- Para exemplo abaixo dar certo preciso ter instalado na maquina com brew o [swiftLint](https://www.youtube.com/watch?v=cHPLBy5etvM) e o [swiftFormat](https://www.youtube.com/watch?v=S7e_rp_ZRKY)
+- Para ambos criamos um script no target do projeto em build phases
+- Para exemplo abaixo dar certo preciso ter instalado na máquina com Brew, [swiftLint](https://www.youtube.com/watch?v=cHPLBy5etvM) e o [swiftFormat](https://www.youtube.com/watch?v=S7e_rp_ZRKY)
 - Precisa de um arquivo na raiz .swiftformat e .swiftlint.yml
+- Brew install swiftlint
+- Brew install swiftformat
 
 ```bash
 
@@ -777,5 +781,74 @@ fi
 
 
 ```
+
+##
+- Para trabalhar com swipe e gesture, existe uma propriedade chamada swipeActions, porém eu implementei a minha
+- Segredo e usar o offesset e a propriedade animation, assim cria um swipe, no exemplo abaixo estou navegando da direita para esquerda, quando a dimensão estiver menor que 200 irei remover do carrinho
+- Se quiser fazer o inverso ou implementar ambos  e só comparar o startLocation e locationX
+
+```swift
+ZStack {
+      Image(systemName: "trash.fill")
+        .resizable()
+        .frame(width: 25, height: 25)
+        .offset(x: 100)
+        .foregroundColor(.red)
+      HStack(spacing: 20) {
+        AsyncImage(url: URL(string: order.urlPhoto), scale: 8)
+          .scaledToFill()
+          .cornerRadius(8)
+
+        VStack(alignment: .leading) {
+          Text(order.name)
+            .font(.custom(FontsApp.interMedium, size: 18))
+            .foregroundColor(ColorsApp.white)
+            .lineLimit(2)
+
+          Spacer()
+          Text(order.price)
+            .font(.custom(FontsApp.interRegular, size: 18))
+            .foregroundColor(ColorsApp.white)
+        }
+        Spacer()
+        HStack(spacing: 4) {
+          CustomButtonAddOrMinusItens(nameImage: "minus", action: handleMinusQuantity)
+
+          Text("\(order.quantity)")
+            .font(.custom(FontsApp.interLight, size: 14))
+            .foregroundColor(ColorsApp.beige)
+            .frame(width: 20)
+
+          CustomButtonAddOrMinusItens(nameImage: "plus", action: handlePlusQuantity)
+        }
+      }
+      .padding(EdgeInsets(top: 5, leading: 10, bottom: 7, trailing: 7))
+      .background(ColorsApp.brown)
+      .cornerRadius(5)
+      .frame(height: 100)
+      .offset(x: offsetAnimated)
+      .animation(.spring(), value: true)
+      .gesture(
+        DragGesture()
+          .onChanged {
+            if $0.startLocation.x > $0.location.x {
+              offsetAnimated = $0.translation.width
+            }
+            if $0.translation.width < -200 {
+              removal?()
+            }
+          }
+          .onEnded { _ in
+            offsetAnimated = 0.0
+          }
+      )
+    }
+
+
+
+```
+
+
+
 
 

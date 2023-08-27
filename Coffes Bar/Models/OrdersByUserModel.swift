@@ -29,6 +29,7 @@ struct Orders: Codable, Identifiable {
   let price: String
   let quantity: Int
   let urlImage: String
+  let coffeeId: String
 
   private enum CodingKeys: String, CodingKey {
     case id = "_id"
@@ -36,5 +37,6 @@ struct Orders: Codable, Identifiable {
     case price
     case quantity
     case urlImage
+    case coffeeId
   }
 }

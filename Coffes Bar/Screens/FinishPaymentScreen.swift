@@ -43,7 +43,8 @@ struct FinishPaymentScreen: View {
       title: $0.name,
       urlImage: $0.urlPhoto,
       price: $0.price,
-      quantity: $0.quantity
+      quantity: $0.quantity,
+      coffeeId: $0.id
     ) }
 
     let formatValueTotal = String(format: "%.2f", valueTotalCart).replacingOccurrences(of: ".", with: ",")

@@ -25,7 +25,7 @@ struct FavoriteOrders: View {
       if let index = order.cartOrder.firstIndex(where: { $0.id == orders.id }) {
         let orderRemoved = order.cartOrder.remove(at: index)
         let order = OrdersModel(
-          id: orders.id,
+          id: orders.coffeeId,
           urlPhoto: orders.urlImage,
           quantity: orders.quantity + orderRemoved.quantity,
           price: orders.price,
@@ -35,7 +35,7 @@ struct FavoriteOrders: View {
 
       } else {
         let order = OrdersModel(
-          id: orders.id,
+          id: orders.coffeeId,
           urlPhoto: orders.urlImage,
           quantity: orders.quantity,
           price: orders.price,
@@ -78,7 +78,7 @@ struct FavoriteOrders: View {
               } label: {
                 Order(
                   order: OrdersModel(
-                    id: order.id,
+                    id: order.coffeeId,
                     urlPhoto: order.urlImage,
                     quantity: order.quantity,
                     price: order.price,

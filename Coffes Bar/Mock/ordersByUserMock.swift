@@ -16,21 +16,24 @@ let ordersByUserMock: [OrdersByUserModel] = [
         title: "Pingado",
         price: "R$ 6,00",
         quantity: 3,
-        urlImage: "https://cdn.abrahao.com.br/base/f4d/0e2/e7f/pingado.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/f4d/0e2/e7f/pingado.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       ),
       Orders(
         id: "d0d782cc315bcb623ed940",
         title: "Latte",
         price: "R$ 14,00",
         quantity: 4,
-        urlImage: "https://cdn.abrahao.com.br/base/f50/c70/35e/latte.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/f50/c70/35e/latte.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       ),
       Orders(
         id: "64d3847f106302ae76befsf5sf726",
         title: "Bebida aleatoria",
         price: "R$ 6,30",
         quantity: 7,
-        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       )
     ],
     priceCartTotal: "R$14,00",
@@ -45,21 +48,24 @@ let ordersByUserMock: [OrdersByUserModel] = [
         title: "Bebida aleatoria",
         price: "R$ 6,30",
         quantity: 3,
-        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       ),
       Orders(
         id: "64d0d7622724facc9ec2",
         title: "Bebida aleatoria",
         price: "R$ 6,30",
         quantity: 4,
-        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       ),
       Orders(
         id: "64d0d8404efdc5abe2835",
         title: "Bebida aleatoria",
         price: "R$ 6,30",
         quantity: 7,
-        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg"
+        urlImage: "https://cdn.abrahao.com.br/base/fa7/518/562/espresso.jpg",
+        coffeeId: "d0d782cc315bcb623ed940"
       )
     ],
     priceCartTotal: "R$14,00",

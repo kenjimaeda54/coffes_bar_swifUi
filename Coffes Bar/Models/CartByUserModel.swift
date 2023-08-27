@@ -23,4 +23,5 @@ struct OrdersByUser: Codable {
   let urlImage: String
   let price: String
   let quantity: Int
+  let coffeeId: String
 }

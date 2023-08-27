@@ -1361,5 +1361,489 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "HomeScreen"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - 1cd7e1b3cefa784"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Coffes_Bar.HomeScreen.cart : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - ea82d953c39ad0b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.cart.getter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - 618c9147b5844be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.cart.setter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - 873aeb6f1181a7af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.cart.modify : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - bf263b99cb538fbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.cart.modify : Coffes_Bar.CartObservable with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "5C17F44A-EFC9-422E-A837-B6771AD23BB5 - c06bee8385aad0ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.$cart.getter : SwiftUI.ObservedObject&lt;Coffes_Bar.CartObservable&gt;.Wrapper"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363 - 776ea006b9fd3228"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363 - ec14ce79c41d20ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Coffes_Bar.CoffeeItem in closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9254B448-D923-4959-BF87-0534D882A6E6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/View/CoffeeItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CoffeeItem"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - 8f5368f3164634ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Coffes_Bar.CoffeeItem.order : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - be5cce89a9e9e83c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.getter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - 4c884cc7702f6430"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.setter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - 96f2990cfb043b23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.modify : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - a1a209a1240f4317"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.modify : Coffes_Bar.CartObservable with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "9254B448-D923-4959-BF87-0534D882A6E6 - ab0f2b9c8f555c64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.$order.getter : SwiftUI.ObservedObject&lt;Coffes_Bar.CartObservable&gt;.Wrapper"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/View/CoffeeItem.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "CoffeeItem"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - 8f5368f3164634ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Coffes_Bar.CoffeeItem.order : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - be5cce89a9e9e83c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.getter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - 4c884cc7702f6430"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.setter : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - 96f2990cfb043b23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.modify : Coffes_Bar.CartObservable"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - a1a209a1240f4317"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.order.modify : Coffes_Bar.CartObservable with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "EE6A400C-C558-4321-8527-D85539AAEEBD - ab0f2b9c8f555c64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.CoffeeItem.$order.getter : SwiftUI.ObservedObject&lt;Coffes_Bar.CartObservable&gt;.Wrapper"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/View/CoffeeItem.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "503ADE23-EC85-4490-85E7-31EE9F16BBC0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7EE168C-CBB2-4542-AFA0-8C06B9B7779E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/FinishPaymentScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "handleCreateCars()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D7EE168C-CBB2-4542-AFA0-8C06B9B7779E - f81fa588a3edf151"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.FinishPaymentScreen.handleCreateCars() -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/FinishPaymentScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "D7EE168C-CBB2-4542-AFA0-8C06B9B7779E - 59519d97c21320f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Coffes_Bar.OrdersModel) -&gt; Coffes_Bar.OrdersByUser in Coffes_Bar.FinishPaymentScreen.handleCreateCars() -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/FinishPaymentScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDF491E5-B287-44E3-8492-AF56E325B96F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/Cart.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEFB7526-3177-4CA2-A000-F5973A26301D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/FinishPaymentScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "handleCreateCars()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A5A2E1D-548A-413F-A998-878C7746A559"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/FinishPaymentScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "handleCreateCars()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

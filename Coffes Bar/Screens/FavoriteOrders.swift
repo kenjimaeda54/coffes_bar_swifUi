@@ -22,7 +22,7 @@ struct FavoriteOrders: View {
 
   func selectedOrder(_ orders: [Orders]) {
     orders.forEach { orders in
-      if let index = order.cartOrder.firstIndex(where: { $0.id == orders.id }) {
+      if let index = order.cartOrder.firstIndex(where: { $0.id == orders.coffeeId }) {
         let orderRemoved = order.cartOrder.remove(at: index)
         let order = OrdersModel(
           id: orders.coffeeId,

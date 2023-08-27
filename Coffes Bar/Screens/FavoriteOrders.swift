@@ -104,7 +104,7 @@ struct FavoriteOrders: View {
       }
       .listStyle(.grouped)
       .navigationBarTitleDisplayMode(.inline)
-      .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+      .padding(EdgeInsets(top: 10, leading: 15, bottom: 60, trailing: 15))
       .scrollContentBackground(.hidden)
       .edgesIgnoringSafeArea([.bottom, .leading, .trailing])
       .scrollIndicators(.hidden)

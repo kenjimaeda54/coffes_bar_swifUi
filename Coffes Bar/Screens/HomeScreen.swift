@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  @State private var searchMovie = ""
+  @State private var searchCoffee = ""
   @ObservedObject var cart: CartObservable
   @EnvironmentObject private var stateTabView: StateNavigationTabView
   @State private var isSheetPresented = false
@@ -56,6 +56,11 @@ struct HomeScreen: View {
                 string: storeAvatars.avatarByUser.urlAvatar
               ), scale: 7) { phase in
 
+                if phase.error != nil {
+                  Text("Não consegui carregar foto")
+                    .font(.custom(FontsApp.interLight, size: 11))
+                }
+
                 if let image = phase.image {
                   image
                     .resizable()
@@ -77,10 +82,11 @@ struct HomeScreen: View {
               .foregroundColor(ColorsApp.white)
             TextField(
               "",
-              text: $searchMovie,
+              text: $searchCoffee.max(50),
               prompt: Text("Search your favorite coffee")
                 .foregroundColor(ColorsApp.gray)
-                .font(.custom(FontsApp.interThin, size: 17))
+                .font(.custom(FontsApp.interThin, size: 17)),
+              axis: .vertical
             )
             .foregroundColor(ColorsApp.white)
             .font(.custom(FontsApp.interLight, size: 17))

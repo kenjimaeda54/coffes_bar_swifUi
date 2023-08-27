@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import URLImage
 
 struct CoffeeItem: View {
   let coffee: CoffeesModel

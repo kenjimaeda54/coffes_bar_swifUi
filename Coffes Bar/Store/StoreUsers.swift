@@ -56,4 +56,28 @@ class StoreUsers: ObservableObject {
       }
     }
   }
+
+  func updateUserAvatar(
+    withUpdateAvatar: UpdateAvatarModel,
+    andUserId userId: String,
+    completion: @escaping (Bool) -> Void
+  ) {
+    UserWebService().updateAvatar(withUpateAvatar: withUpdateAvatar, andUserId: userId) { result in
+
+      switch result {
+      case let .success(stats):
+
+        DispatchQueue.main.async {
+          completion(stats)
+        }
+
+      case let .failure(error):
+
+        DispatchQueue.main.async {
+          print(error)
+          completion(false)
+        }
+      }
+    }
+  }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUISnackbar
 
 struct HomeScreen: View {
   @State private var searchCoffee = ""
@@ -14,9 +15,13 @@ struct HomeScreen: View {
   @State private var isSheetPresented = false
   @StateObject var storeCoffess = StoreCoffess()
   @StateObject var storeAvatars = StoreAvatar()
+  @StateObject var storeUpdateUser = StoreUsers()
   @State private var collectionCoffee: [CoffeesModel] = []
-
+  @State private var urlAvatarSelected = ""
+  @State private var isSnackBarPresented = false
+  @FocusState private var searchIsFocused: Bool
   var user: UsersModel
+  @Binding var isLoggedIn: Bool
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
     if cart.cartOrder.contains(where: { itemSelected.id == $0.id }) {
@@ -52,6 +57,23 @@ struct HomeScreen: View {
     }
   }
 
+  func handleUpateAvatar(_ avatar: AvatarsModel) {
+    let updateAvatar = UpdateAvatarModel(avatarId: avatar.id)
+
+    storeUpdateUser.updateUserAvatar(withUpdateAvatar: updateAvatar, andUserId: user.id) { stats in
+
+      switch stats {
+      case true:
+        urlAvatarSelected = avatar.urlAvatar
+        isSheetPresented = false
+
+      case false:
+
+        isSnackBarPresented = true
+      }
+    }
+  }
+
   var body: some View {
     NavigationView {
       ScrollView(showsIndicators: false) {
@@ -71,23 +93,34 @@ struct HomeScreen: View {
             Button {
               isSheetPresented = true
             } label: {
-              AsyncImage(url: URL(
-                string: storeAvatars.avatarByUser.urlAvatar
-              ), scale: 7) { phase in
+              HStack(alignment: .bottom) {
+                AsyncImage(url: URL(
+                  string: urlAvatarSelected.isEmpty ? storeAvatars.avatarByUser.urlAvatar : urlAvatarSelected
+                ), scale: 7) { phase in
 
-                if phase.error != nil {
-                  Text("Não consegui carregar foto")
-                    .font(.custom(FontsApp.interLight, size: 11))
+                  if phase.error != nil {
+                    Text("Não consegui carregar foto")
+                      .font(.custom(FontsApp.interLight, size: 11))
+                  }
+
+                  if let image = phase.image {
+                    image
+                      .resizable()
+                      .frame(width: 80, height: 80)
+                      .aspectRatio(contentMode: .fit)
+
+                  } else {
+                    PlaceholderAvatar()
+                  }
                 }
 
-                if let image = phase.image {
-                  image
+                Button(action: { isLoggedIn = false }) {
+                  Image(systemName: "power.circle.fill")
                     .resizable()
-                    .frame(width: 80, height: 80)
-                    .aspectRatio(contentMode: .fit)
-
-                } else {
-                  PlaceholderAvatar()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(ColorsApp.red)
+                    .offset(y: -10)
                 }
               }
             }
@@ -101,12 +134,24 @@ struct HomeScreen: View {
               .foregroundColor(ColorsApp.white)
             TextField(
               "",
-              text: $searchCoffee.max(50),
+              text: Binding(
+                get: {
+                  searchCoffee
+                }, set: { newValue, _ in
+                  if let _ = newValue.lastIndex(of: "\n") {
+                    searchIsFocused = false
+                  } else {
+                    searchCoffee = newValue
+                  }
+                }
+
+              ).max(50),
               prompt: Text("Search your favorite coffee")
                 .foregroundColor(ColorsApp.gray)
                 .font(.custom(FontsApp.interThin, size: 17)),
               axis: .vertical
             )
+            .focused($searchIsFocused)
             .foregroundColor(ColorsApp.white)
             .font(.custom(FontsApp.interLight, size: 17))
             .onChange(of: searchCoffee, perform: handleInputCoffeFavorite)
@@ -162,6 +207,7 @@ struct HomeScreen: View {
       .onAppear {
         stateTabView.hiddeTabView = false
         storeAvatars.fetchAnAvatar(user.avatarId)
+        storeAvatars.fetchAllAvatar()
         storeCoffess.fetchAllCoffes()
         collectionCoffee = storeCoffess.coffees
       }
@@ -169,20 +215,32 @@ struct HomeScreen: View {
       // https://www.appcoda.com/swiftui-bottom-sheet-background/
       .sheet(isPresented: $isSheetPresented) {
         LazyVGrid(columns: gridItemAvatars, spacing: 15) {
-          ForEach(avatarsMock) { avatars in
-            RowAvatarImage(urlString: avatars.urlAvatar)
+          ForEach(storeAvatars.avatar) { avatars in
+            Button(action: { handleUpateAvatar(avatars) }) {
+              RowAvatarImage(urlString: avatars.urlAvatar)
+            }
           }
           .presentationDetents([.medium])
           .presentationBackground(ColorsApp.brown)
         }
       }
+      .snackbar(
+        isShowing: $isSnackBarPresented,
+        title: "Não foi possível atualizar avatar",
+        style: .custom(ColorsApp.brown)
+      )
     }
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeScreen(cart: CartObservable(), user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
-      .environmentObject(StateNavigationTabView())
+    HomeScreen(
+      cart: CartObservable(),
+      user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""),
+      isLoggedIn: .constant(false)
+    )
+
+    .environmentObject(StateNavigationTabView())
   }
 }

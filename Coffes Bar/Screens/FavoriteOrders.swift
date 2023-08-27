@@ -69,7 +69,8 @@ struct FavoriteOrders: View {
       }
     } else {
       List {
-        ForEach(storeOrders.orderByUser) { ordersGroup in
+        // para aplicar o reverso na lista so jogar no array
+        ForEach(storeOrders.orderByUser.reversed()) { ordersGroup in
 
           Section {
             ForEach(ordersGroup.orders) { order in

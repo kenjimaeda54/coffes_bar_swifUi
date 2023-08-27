@@ -14,7 +14,7 @@ struct RootViewScreen: View {
 
   var body: some View {
     if isLoggedIn {
-      MainViewScreen(user: user)
+      MainViewScreen(user: user, isLoggedIn: $isLoggedIn)
     } else {
       LoginScreen(isLoged: $isLoggedIn, user: $user)
     }

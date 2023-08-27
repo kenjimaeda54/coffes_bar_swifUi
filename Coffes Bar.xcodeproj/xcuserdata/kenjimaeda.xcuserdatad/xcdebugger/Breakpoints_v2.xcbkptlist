@@ -735,8 +735,8 @@
             filePath = "Coffes Bar/Store/StoreUsers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60">
+            startingLineNumber = "87"
+            endingLineNumber = "87">
             <Locations>
                <Location
                   uuid = "57A63480-2E45-4E86-8CD1-710CBB5CFCEC - a1fc4070461cde62"
@@ -1243,8 +1243,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "HomeScreen"
             landmarkType = "14">
             <Locations>
@@ -1567,9 +1567,9 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "body"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "previews"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1679,8 +1679,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "HomeScreen"
             landmarkType = "14">
          </BreakpointContent>
@@ -1695,8 +1695,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "handleInputCoffeFavorite(_:)"
             landmarkType = "7">
             <Locations>
@@ -1743,8 +1743,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "handleInputCoffeFavorite(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1759,8 +1759,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "handleInputCoffeFavorite(_:)"
             landmarkType = "7">
             <Locations>
@@ -1808,6 +1808,671 @@
                   startingLineNumber = "42"
                   endingLineNumber = "42"
                   offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870 - dea501d93793d9c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870 - c83cc8e6fc2a39bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; Swift.Bool in Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "080B97D2-90E8-41CE-8E21-4FD880136D8A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "handleUpateAvatar(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "080B97D2-90E8-41CE-8E21-4FD880136D8A - 3866a20d670f227b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleUpateAvatar(Coffes_Bar.AvatarsModel) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "080B97D2-90E8-41CE-8E21-4FD880136D8A - 9a741b3467947e7f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Coffes_Bar.HomeScreen.handleUpateAvatar(Coffes_Bar.AvatarsModel) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C18CF4A-5240-4EE3-AED2-C123D49551AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "handleUpateAvatar(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C18CF4A-5240-4EE3-AED2-C123D49551AC - 3866a20d670f21b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleUpateAvatar(Coffes_Bar.AvatarsModel) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "4C18CF4A-5240-4EE3-AED2-C123D49551AC - 3866a20d670f21b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleUpateAvatar(Coffes_Bar.AvatarsModel) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3B1F2E5-AD11-4EED-8991-7442841194F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3B1F2E5-AD11-4EED-8991-7442841194F7 - 9ad458f447412e5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "648">
+               </Location>
+               <Location
+                  uuid = "D3B1F2E5-AD11-4EED-8991-7442841194F7 - a99734a878daeb36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27C372EA-7FDA-49DC-B66C-7DAD42BA9389"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27C372EA-7FDA-49DC-B66C-7DAD42BA9389 - ad0ea0915fe54e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "1856">
+               </Location>
+               <Location
+                  uuid = "27C372EA-7FDA-49DC-B66C-7DAD42BA9389 - ad0ea0915fe54e3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "2836">
+               </Location>
+               <Location
+                  uuid = "27C372EA-7FDA-49DC-B66C-7DAD42BA9389 - 8a947158cd0437a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "1312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6D0053F-DDB3-4CD2-99AD-652512D737B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Store/StoreUsers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "updateUserAvatar(withUpdateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C6D0053F-DDB3-4CD2-99AD-652512D737B0 - 38a0397d78fbfd37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "C6D0053F-DDB3-4CD2-99AD-652512D737B0 - 74ac1e167778531f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; () in Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "C6D0053F-DDB3-4CD2-99AD-652512D737B0 - 1e640d44844fbe51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "261B3FD7-F7DD-4A63-9C04-A62CD2E26B2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Store/StoreUsers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "updateUserAvatar(withUpdateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "261B3FD7-F7DD-4A63-9C04-A62CD2E26B2C - 74ac1e167778531f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; () in Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "261B3FD7-F7DD-4A63-9C04-A62CD2E26B2C - 1e640d44844fbe51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "261B3FD7-F7DD-4A63-9C04-A62CD2E26B2C - 24b11f66e3bfcd51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; () in Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F179816-C3DD-49BC-8D5F-10B9182AA174"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F179816-C3DD-49BC-8D5F-10B9182AA174 - ad0ea0915fe5404c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "516">
+               </Location>
+               <Location
+                  uuid = "0F179816-C3DD-49BC-8D5F-10B9182AA174 - ad0ea0915fe5404c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+               <Location
+                  uuid = "0F179816-C3DD-49BC-8D5F-10B9182AA174 - ad0ea0915fe5404c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC1B51C5-7BCA-42B2-B7E1-00C3E558B0D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Store/StoreAvatar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchAllAvatar()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7747E0E5-5148-4021-8212-6D3CC7CF03CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Store/StoreAvatar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchAllAvatar()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3913C835-FC37-40A2-9121-BA601F35B208"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Store/StoreUsers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "updateUserAvatar(withUpdateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3913C835-FC37-40A2-9121-BA601F35B208 - e62c12253337a4f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; () in Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "3913C835-FC37-40A2-9121-BA601F35B208 - 24b11f66e3bfcc59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; () in Coffes_Bar.StoreUsers.updateUserAvatar(withUpdateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Store/StoreUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "624">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE008823-D97C-4886-8251-47663020A6D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE008823-D97C-4886-8251-47663020A6D2 - ad0ea0915fe541c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+               <Location
+                  uuid = "DE008823-D97C-4886-8251-47663020A6D2 - ad0ea0915fe541c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "1200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91E775F4-EC04-4549-BC6F-A362805DA154"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91E775F4-EC04-4549-BC6F-A362805DA154 - ad0ea0915fe54ed0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1816">
+               </Location>
+               <Location
+                  uuid = "91E775F4-EC04-4549-BC6F-A362805DA154 - 8a947158cd043749"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7338111E-9E42-4467-BDF4-75D9E30FC71C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Services/UserWebService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "updateAvatar(withUpateAvatar:andUserId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7338111E-9E42-4467-BDF4-75D9E30FC71C - 9ad458f447412dba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "7338111E-9E42-4467-BDF4-75D9E30FC71C - a99734a878dae8d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "7338111E-9E42-4467-BDF4-75D9E30FC71C - a99734a878dae8d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Coffes_Bar.UserWebService.updateAvatar(withUpateAvatar: Coffes_Bar.UpdateAvatarModel, andUserId: Swift.String, completion: (Swift.Result&lt;Swift.Bool, Coffes_Bar.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Services/UserWebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "172">
                </Location>
             </Locations>
          </BreakpointContent>

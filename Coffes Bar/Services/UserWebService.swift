@@ -111,4 +111,46 @@ class UserWebService {
 
     }.resume()
   }
+
+  func updateAvatar(
+    withUpateAvatar updateAvar: UpdateAvatarModel,
+    andUserId userId: String,
+    completion: @escaping (Result<Bool, NetworkError>) -> Void
+  ) {
+    guard let url = URL(string: "\(baseUrl)/users/avatar?userId=\(userId)") else {
+      return completion(.failure(.badUrl))
+    }
+
+    var request = URLRequest(url: url)
+
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+    do {
+      let jsonEncode = try JSONEncoder().encode(updateAvar)
+      request.httpBody = jsonEncode
+    } catch {
+      print(error.localizedDescription)
+      completion(.failure(.invalidRequest))
+    }
+
+    URLSession.shared.dataTask(with: request) { data, _, error in
+
+      guard let data = data, error == nil else {
+        return completion(.failure(.noData))
+      }
+
+      do {
+        let response = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
+        if response?["sucess"] != nil {
+          completion(.success(true))
+        }
+
+      } catch {
+        print(error.localizedDescription)
+        completion(.failure(.invalidRequest))
+      }
+    }.resume()
+  }
 }

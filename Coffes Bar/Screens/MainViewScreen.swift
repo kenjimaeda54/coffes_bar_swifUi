@@ -12,12 +12,13 @@ struct MainViewScreen: View {
   @ObservedObject var cartOders = CartObservable()
   @StateObject var stateTabView = StateNavigationTabView()
   var user: UsersModel
+  @Binding var isLoggedIn: Bool
 
   var body: some View {
     // maneira de navegar via codigo entre as tabs
     // alem de fazer as tagas criei um objeto que e compartilhado entre todas as views
     TabView(selection: $stateTabView.tagSelected) {
-      HomeScreen(cart: cartOders, user: user)
+      HomeScreen(cart: cartOders, user: user, isLoggedIn: $isLoggedIn)
         .tabItem {
           Image(systemName: "house.fill")
         }
@@ -68,7 +69,10 @@ struct MainViewScreen: View {
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainViewScreen(user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""))
-      .environmentObject(StateNavigationTabView())
+    MainViewScreen(
+      user: UsersModel(id: "", name: "", email: "", avatarId: "", password: ""),
+      isLoggedIn: .constant(false)
+    )
+    .environmentObject(StateNavigationTabView())
   }
 }

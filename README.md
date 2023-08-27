@@ -492,7 +492,7 @@ enum Field: Int, Hashable {
 - Quando deseja criar objetos que serão compartilhados com toda aplicação usamos o enrironmentObject como exemplo abaixo
 
 
-```swfit
+```swift
   //criando a referencia todas que estiverem englobado pela MainView terao acesso
 
   @StateObject var stateTabView = StateNavigationTabView()
@@ -584,7 +584,7 @@ struct ContentView_Previews: PreviewProvider {
 - Exemplo abaixo como implementar nesting de navegação o exmplo abaixo, quando navega pra uma stack removia a tab bar e  ao retonrar dessa stack implmentava novmanete a tab bar
 
 
-```swfit
+```swift
 // implementadoa logica da tab view, imporamente usar a palavra tag com ela consigo navegar via codigo para qualquer tab
 
 

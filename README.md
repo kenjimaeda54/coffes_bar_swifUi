@@ -785,7 +785,7 @@ fi
 ##
 - Para trabalhar com swipe e gesture, existe uma propriedade chamada swipeActions, porém eu implementei a minha
 - Segredo e usar o offesset e a propriedade animation, assim cria um swipe, no exemplo abaixo estou navegando da direita para esquerda, quando a dimensão estiver menor que 200 irei remover do carrinho
-- Se quiser fazer o inverso ou implementar ambos  e só comparar o startLocation e locationX
+- Se quiser fazer o inverso ou implementar ambos  e só comparar o startLocation e locationX,instancia o novo valor ao offsetAnimated
 
 ```swift
 ZStack {

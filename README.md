@@ -651,7 +651,7 @@ func handleBack() {
 ## 
 - Para limpar as stack do fluxo de navegação e não interferer com as tab implementei uma classe ObservableObject e com ela eu conseguia remover usando um exemplo do pop
 
-```swift
+```swfit
 //classe
 class StateNavigationStack: ObservableObject {
   @Published var isActiveFinishPayment = false

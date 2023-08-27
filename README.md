@@ -721,7 +721,7 @@ class StateNavigationStack: ObservableObject {
 - Outros exemplos de usar regex e propriedade computada em swift
 - Validar [email](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift), [password](https://stackoverflow.com/questions/39284607/how-to-implement-a-regex-for-password-validation-in-swift)
 
-```swfit
+```swift
 
   var validateEmail: Bool {
     let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

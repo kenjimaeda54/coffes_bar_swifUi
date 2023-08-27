@@ -14,6 +14,8 @@ struct HomeScreen: View {
   @State private var isSheetPresented = false
   @StateObject var storeCoffess = StoreCoffess()
   @StateObject var storeAvatars = StoreAvatar()
+  @State private var collectionCoffee: [CoffeesModel] = []
+
   var user: UsersModel
 
   func handleSelectedCoffee(_ itemSelected: CoffeesModel) {
@@ -30,6 +32,23 @@ struct HomeScreen: View {
       )
 
       cart.cartOrder.append(order)
+    }
+  }
+
+  func handleInputCoffeFavorite(_ newValue: String) {
+    if searchCoffee.count % 3 == 0 {
+      do {
+        let regex = try NSRegularExpression(pattern: newValue, options: .caseInsensitive)
+        collectionCoffee = storeCoffess.coffees.filter { regex.matches($0.name) }
+
+      } catch {
+        print(error)
+        collectionCoffee = []
+      }
+    }
+
+    if searchCoffee.count < 2 {
+      collectionCoffee = []
     }
   }
 
@@ -90,16 +109,40 @@ struct HomeScreen: View {
             )
             .foregroundColor(ColorsApp.white)
             .font(.custom(FontsApp.interLight, size: 17))
+            .onChange(of: searchCoffee, perform: handleInputCoffeFavorite)
+            .autocorrectionDisabled(true)
+            .autocapitalization(.none)
           }
           .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
           .background(ColorsApp.brown)
           .cornerRadius(18)
           .padding()
 
-          switch storeCoffess.loading {
-          case .sucess:
+          if collectionCoffee.isEmpty {
+            switch storeCoffess.loading {
+            case .sucess:
+              LazyVGrid(columns: gridItemCoffee) {
+                ForEach(storeCoffess.coffees) { coffee in
+                  // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView ou NavigationStack
+                  NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
+                    CoffeeItem(
+                      coffee: coffee, order: cart,
+                      handleSelectedCoffee: { handleSelectedCoffee(coffee) }
+                    )
+                  }
+                }
+              }
+
+            case .failure:
+              TextError()
+
+            default:
+              PlaceholderListCoffe(cart: cart)
+            }
+
+          } else {
             LazyVGrid(columns: gridItemCoffee) {
-              ForEach(storeCoffess.coffees) { coffee in
+              ForEach(collectionCoffee) { coffee in
                 // para NavigationLink funcionar precisa etar envolvido tudo no NaviagionView ou NavigationStack
                 NavigationLink(destination: DetailsScreen(coffee: coffee, order: cart)) {
                   CoffeeItem(
@@ -109,12 +152,6 @@ struct HomeScreen: View {
                 }
               }
             }
-
-          case .failure:
-            TextError()
-
-          default:
-            PlaceholderListCoffe(cart: cart)
           }
         }
       }
@@ -126,6 +163,7 @@ struct HomeScreen: View {
         stateTabView.hiddeTabView = false
         storeAvatars.fetchAnAvatar(user.avatarId)
         storeCoffess.fetchAllCoffes()
+        collectionCoffee = storeCoffess.coffees
       }
       // sheet
       // https://www.appcoda.com/swiftui-bottom-sheet-background/

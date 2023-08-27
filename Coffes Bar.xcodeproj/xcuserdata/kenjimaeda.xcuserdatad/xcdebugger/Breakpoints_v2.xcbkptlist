@@ -980,22 +980,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6CF0DE2B-7A95-44EF-83E9-18A5EED0BE30"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1B4E5521-9F54-49DE-964D-AB6AD518ED23"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1087,118 +1071,6 @@
             endingLineNumber = "21"
             landmarkName = "fetchAllCoffes()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CEC0F5EA-5968-45E1-8FD8-CAF8CD2A90DE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "476D59C7-2AA3-4F4C-8DA3-E3BA7CAFB9B4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "476D59C7-2AA3-4F4C-8DA3-E3BA7CAFB9B4 - 73b52281d88d0015"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "476D59C7-2AA3-4F4C-8DA3-E3BA7CAFB9B4 - 776ea006b9fd3228"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "632">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B342B6D4-069D-4791-B76F-3CBE68CD7BC7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "B342B6D4-069D-4791-B76F-3CBE68CD7BC7 - 776ea006b9fd3228"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "632">
-               </Location>
-               <Location
-                  uuid = "B342B6D4-069D-4791-B76F-3CBE68CD7BC7 - ec14ce79c41d20ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; Coffes_Bar.CoffeeItem in closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1472,54 +1344,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffes Bar/Screens/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363 - 776ea006b9fd3228"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "668">
-               </Location>
-               <Location
-                  uuid = "1D14D0A1-4739-4A92-9D36-D9AFD9A5F363 - ec14ce79c41d20ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; Coffes_Bar.CoffeeItem in closure #1 (Coffes_Bar.CoffeesModel) -&gt; SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Coffes_Bar.CoffeesModel&gt;, Swift.String, SwiftUI.NavigationLink&lt;Coffes_Bar.CoffeeItem, Coffes_Bar.DetailsScreen&gt;&gt;&gt;, Coffes_Bar.TextError&gt;, Coffes_Bar.PlaceholderListCoffe&gt;)&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0 in Coffes_Bar.HomeScreen.body.getter : some"
-                  moduleName = "Coffes Bar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9254B448-D923-4959-BF87-0534D882A6E6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1743,8 +1567,8 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1855,10 +1679,137 @@
             filePath = "Coffes Bar/Screens/HomeScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "HomeScreen"
             landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C9488A3-416C-4043-A388-546EDCFACF35"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "handleInputCoffeFavorite(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4C9488A3-416C-4043-A388-546EDCFACF35 - dea501d93793d90d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "4C9488A3-416C-4043-A388-546EDCFACF35 - dea501d93793d90d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06AF6D53-1533-49FF-BA05-E6D899696F9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "handleInputCoffeFavorite(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffes Bar/Screens/HomeScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "handleInputCoffeFavorite(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870 - dea501d93793d9a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870 - dea501d93793d94b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "AFD3F9F9-D309-4ED5-9AAC-D706548CC870 - c83cc8e6fc2a3933"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Coffes_Bar.CoffeesModel) -&gt; Swift.Bool in Coffes_Bar.HomeScreen.handleInputCoffeFavorite(Swift.String) -&gt; ()"
+                  moduleName = "Coffes Bar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kenjimaeda/Documents/projects_IOS/coffes_bar_swifUi/Coffes%20Bar/Screens/HomeScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

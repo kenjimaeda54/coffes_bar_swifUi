@@ -361,7 +361,7 @@ var request = URLRequest(url: url)
 ```
 
 ## 
-- Extension Swift e algo podero apliquei alguns como [spreed opator]( https://gist.github.com/cprovatas/d07226c3b8f4bd37dd6232d9ed013d6a),[max length](// https://stackoverflow.com/questions/56476007/swiftui-textfield-max-length),[regex](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+- Extension Swift e algo podero apliquei alguns como [spreed opator]( https://gist.github.com/cprovatas/d07226c3b8f4bd37dd6232d9ed013d6a), [max length](https://stackoverflow.com/questions/56476007/swiftui-textfield-max-length),[regex](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
 
 
 

@@ -748,3 +748,34 @@ class StateNavigationStack: ObservableObject {
 
 ```
 
+
+##
+- Trabalhei usando o swiftFormat e o swfitLint
+- Para ambos criamos um script no target no projeto em build phases
+- Para exemplo abaixo dar certo preciso ter instalado na maquina com brew o [swiftLint](https://www.youtube.com/watch?v=cHPLBy5etvM) e o [swiftFormat](https://www.youtube.com/watch?v=S7e_rp_ZRKY)
+- Precisa de um arquivo na raiz .swiftformat e .swiftlint.yml
+
+```bash
+
+# swiftformat
+export PATH="/opt/homebrew/bin:$PATH"
+if which swiftformat > /dev/null; then
+  swiftformat .
+else
+  echo "warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat"
+fi
+
+
+#swiftlint
+export PATH="/opt/homebrew/bin:$PATH"
+if which swiftformat > /dev/null; then
+  swiftlint 
+else
+  echo "warning: swiftlint not installed"
+fi
+
+
+
+```
+
+

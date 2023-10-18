@@ -848,7 +848,7 @@ ZStack {
 
 ```
 
-
-
+## Publicação
+[Linkedin](https://www.linkedin.com/posts/kenjimaeda1233_github-express-swift-activity-7101643221562253313-FQ9T?utm_source=share&utm_medium=member_desktop)
 
 
